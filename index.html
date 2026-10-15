@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zumar Wonderland ✨</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff7fc;
+    color: #44345b;
+}
+
+header {
+    background: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    box-shadow: 0 3px 15px #eadcf0;
+}
+
+.logo {
+    color: #a64dce;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+nav a {
+    text-decoration: none;
+    color: #655276;
+    margin: 8px;
+    font-weight: bold;
+}
+
+button {
+    border: none;
+    background: #a64dce;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #8739ad;
+}
+
+.hero {
+    margin: 30px auto;
+    padding: 55px 8%;
+    max-width: 1150px;
+    border-radius: 35px;
+    background: linear-gradient(135deg, #f9d9ff, #dceaff, #fff0d5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.hero-text {
+    max-width: 560px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #a64dce;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.hero-art {
+    font-size: 120px;
+    text-align: center;
+}
+
+section {
+    padding: 35px 7%;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+.subtitle {
+    color: #82738f;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 6px 20px #eadcf0;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.pet {
+    font-size: 65px;
+}
+
+.card h3 {
+    margin-bottom: 8px;
+}
+
+.learning {
+    background: #f1e8ff;
+}
+
+.game {
+    background: #fff0d5;
+}
+
+.message {
+    min-height: 28px;
+    color: #8739ad;
+    font-weight: bold;
+}
+
+footer {
+    background: #44345b;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+@media (max-width: 600px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hero-art {
+        font-size: 85px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">✨ Zumar Wonderland</div>
+
+    <nav>
+        <a href="#pets">My Pets</a>
+        <a href="#learn">Learn</a>
+        <a href="#games">Games</a>
+    </nav>
+
+    <button onclick="welcome()">Hello, Wonder Explorer!</button>
+</header>
+
+<main>
+
+    <div class="hero">
+        <div class="hero-text">
+            <p>🌈 YOUR IMAGINATION LIVES HERE</p>
+
+            <h1>A little magic.<br>
+            <span>A lot of wonder.</span></h1>
+
+            <p>
+                Welcome to Zumar Wonderland!
+                Meet magical pets, learn amazing things,
+                play fun games, and explore a world
+                full of imagination.
+            </p>
+
+            <button onclick="startAdventure()">
+                Start My Adventure ✨
+            </button>
+
+            <p class="message" id="welcomeMessage"></p>
+        </div>
+
+        <div class="hero-art">🦄🌈✨</div>
+    </div>
+
+    <section id="pets">
+        <h2>🐾 Meet Your Wonder Pets</h2>
+        <p class="subtitle">
+            Which magical friend will you choose?
+        </p>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="pet">🦊</div>
+                <h3>Foxy</h3>
+                <p>A brave little fox who loves adventures.</p>
+                <button onclick="choosePet('Foxy')">
+                    Choose Foxy
+                </button>
+            </div>
+
+            <div class="card">
+                <div class="pet">🐼</div>
+                <h3>Mochi</h3>
+                <p>A cuddly panda who loves making friends.</p>
+                <button onclick="choosePet('Mochi')">
+                    Choose Mochi
+                </button>
+            </div>
+
+            <div class="card">
+                <div class="pet">🐉</div>
+                <h3>Nova</h3>
+                <p>A tiny dragon with big dreams.</p>
+                <button onclick="choosePet('Nova')">
+                    Choose Nova
+                </button>
+            </div>
+
+            <div class="card">
+                <div class="pet">🐸</div>
+                <h3>Bubbles</h3>
+                <p>A funny frog who loves to jump.</p>
+                <button onclick="choosePet('Bubbles')">
+                    Choose Bubbles
+                </button>
+            </div>
+
+        </div>
+
+        <p class="message" id="petMessage"></p>
+
+        <div class="card" style="margin-top:25px;">
+            <div class="pet">🥚✨</div>
+            <h3>A Mystery Egg!</h3>
+            <p>Can you hatch a surprise pet?</p>
+
+            <button onclick="hatchPet()">Hatch My Egg!</button>
+
+            <p class="message" id="eggMessage"></p>
+        </div>
+    </section>
+
+    <section class="learning" id="learn">
+        <h2>🧠 Learn Something Amazing</h2>
+        <p class="subtitle">
+            Choose a subject and begin your learning adventure.
+        </p>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="pet">🔬</div>
+                <h3>Wonder Science</h3>
+                <p>Discover animals, space, and our planet.</p>
+                <button onclick="openLesson('Science')">
+                    Explore Science
+                </button>
+            </div>
+
+            <div class="card">
+                <div class="pet">🔢</div>
+                <h3>Maths Quest</h3>
+                <p>Challenge your brain with numbers.</p>
+                <button onclick="openLesson('Maths')">
+                    Explore Maths
+                </button>
+            </div>
+
+            <div class="card">
+                <div class="pet">📚</div>
+                <h3>Arabic Corner</h3>
+                <p>Explore Arabic letters and words.</p>
+                <button onclick="openLesson('Arabic')">
+                    Learn Arabic
+                </button>
+            </div>
+
+            <div class="card">
+                <div class="pet">🎨</div>
+                <h3>Creative Studio</h3>
+                <p>Let your imagination shine!</p>
+                <button onclick="openLesson('Art')">
+                    Create Something
+                </button>
+            </div>
+
+        </div>
+
+        <p class="message" id="lessonMessage"></p>
+    </section>
+
+    <section id="games" class="game">
+        <h2>🎮 Wonder Games</h2>
+        <p>Ready for a tiny challenge?</p>
+
+        <div class="card">
+            <div class="pet">⭐</div>
+            <h3>Guess the Magic Number!</h3>
+            <p>I'm thinking of a number from 1 to 5.</p>
+
+            <input
+                id="numberGuess"
+                type="number"
+                min="1"
+                max="5"
+                placeholder="Choose 1–5"
+                style="padding:12px; width:130px; border-radius:12px; border:1px solid #ddd;"
+            >
+
+            <button onclick="guessNumber()">Guess!</button>
+
+            <p class="message" id="gameMessage"></p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <h2>✨ Zumar Wonderland ✨</h2>
+    <p>Dream big. Learn lots. Imagine everything!</p>
+    <p>Made with 💖 for curious minds.</p>
+</footer>
+
+<script>
+function welcome() {
+    alert("Welcome to Zumar Wonderland! 🌈");
+}
+
+function startAdventure() {
+    document.getElementById("welcomeMessage").textContent =
+        "Your adventure begins now! Explore the pets and activities below! 🎉";
+
+    document.getElementById("pets").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function choosePet(name) {
+    document.getElementById("petMessage").textContent =
+        "Yay! " + name + " is your wonder friend! 💖";
+}
+
+const surprisePets = ["🐰 Bunny", "🐱 Sparkle Cat", "🦄 Baby Unicorn", "🐢 Tiny Turtle"];
+
+function hatchPet() {
+    const randomPet = surprisePets[
+        Math.floor(Math.random() * surprisePets.length)
+    ];
+
+    document.getElementById("eggMessage").textContent =
+        "POP! You hatched " + randomPet + "! 🎉";
+}
+
+function openLesson(subject) {
+    document.getElementById("lessonMessage").textContent =
+        "Welcome to " + subject + "! Your learning adventure is coming soon! ✨";
+}
+
+function guessNumber() {
+    const input = document.getElementById("numberGuess");
+    const guess = Number(input.value);
+    const answer = Math.floor(Math.random() * 5) + 1;
+    const message = document.getElementById("gameMessage");
+
+    if (input.value === "" || guess < 1 || guess > 5 || !Number.isInteger(guess)) {
+        message.textContent = "Please enter a whole number from 1 to 5.";
+        return;
+    }
+
+    if (guess === answer) {
+        message.textContent = "Amazing! You guessed it! ⭐ The number was " + answer + "!";
+    } else {
+        message.textContent = "Good try! The magic number was " + answer + ". Try again! 🌈";
+    }
+}
+</script>
+
+</body>
+</html>
