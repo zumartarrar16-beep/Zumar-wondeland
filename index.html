@@ -3,36 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Zumar Wonderland 🌈</title>
 
 <style>
-* {
-  box-sizing: border-box;
+:root {
+  --purple: #7857d9;
+  --pink: #ff8eb4;
+  --blue: #91d9ff;
+  --yellow: #ffe681;
+  --green: #9ce7b0;
+  --ink: #302b50;
+  --paper: #fffaff;
 }
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
+  background: #fff8fd;
+  color: var(--ink);
   font-family: "Trebuchet MS", Arial, sans-serif;
-  background: #fffaf2;
-  color: #39304c;
 }
 
+button, select, input { font: inherit; }
+
+button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 14px;
+  padding: 12px 17px;
+  background: var(--purple);
+  color: white;
+  font-weight: bold;
+}
+
+button:hover { filter: brightness(1.07); }
+
+button:focus-visible, a:focus-visible, select:focus-visible {
+  outline: 3px solid #ff9b36;
+  outline-offset: 3px;
+}
+
+a { color: inherit; }
+
 header {
-  background: white;
-  padding: 18px 5%;
+  padding: 16px 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 15px;
   flex-wrap: wrap;
-  box-shadow: 0 3px 15px #00000008;
+  background: white;
+  border-bottom: 3px solid #f0e6ff;
 }
 
 .logo {
-  font-size: 25px;
-  font-weight: bold;
-  color: #7651c9;
+  color: var(--purple);
+  font-size: 1.5rem;
+  font-weight: 900;
 }
 
 nav {
@@ -43,248 +73,206 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: #493c61;
-  padding: 10px 13px;
-  border-radius: 20px;
   font-weight: bold;
+  padding: 9px 12px;
+  border-radius: 12px;
 }
 
-nav a:hover {
-  background: #f0e7ff;
-}
+nav a:hover { background: #f1eaff; }
 
 .hero {
-  width: 92%;
-  max-width: 1200px;
-  margin: 25px auto;
-  padding: 35px;
-  border-radius: 32px;
-  background: linear-gradient(120deg, #e9dcff, #ffe6ed, #fff0c9);
-  display: flex;
+  padding: 55px 6%;
+  background: linear-gradient(130deg, #e8e0ff, #ffe4f0, #e1f9ff);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 30px;
   align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-  flex-wrap: wrap;
-}
-
-.hero-text {
-  flex: 1;
-  min-width: 240px;
-}
-
-.eyebrow {
-  color: #7651c9;
-  font-weight: bold;
-  letter-spacing: 1px;
 }
 
 .hero h1 {
-  font-size: clamp(38px, 6vw, 66px);
-  line-height: 1.08;
+  font-size: clamp(2.5rem, 6vw, 4.7rem);
+  line-height: 1.05;
   margin: 12px 0;
-  color: #6844b0;
 }
 
-.hero p {
-  font-size: 18px;
-  line-height: 1.7;
+.hero p { font-size: 1.1rem; line-height: 1.7; }
+
+.hero-art {
+  text-align: center;
+  font-size: clamp(5rem, 13vw, 9rem);
+  padding: 25px;
+  border-radius: 35px;
+  background: #ffffffa8;
 }
 
-.primary-button {
-  border: 0;
-  border-radius: 25px;
-  padding: 15px 24px;
-  background: #7651c9;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
+.tag {
   display: inline-block;
-  margin-top: 10px;
-}
-
-.primary-button:hover {
-  background: #5837a5;
-}
-
-.hero-friends {
-  flex: 1;
-  min-width: 230px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.friend {
-  width: 125px;
-  height: 145px;
-  border-radius: 65px 65px 35px 35px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 0 #0000000a;
-  animation: float 2.5s ease-in-out infinite;
-}
-
-.friend:nth-child(2) {
-  animation-delay: .4s;
-  transform: translateY(-15px);
-}
-
-.friend:nth-child(3) {
-  animation-delay: .8s;
-}
-
-.friend .face {
-  font-size: 65px;
-  line-height: 1.3;
-}
-
-.friend span:last-child {
+  background: white;
+  color: var(--purple);
+  border-radius: 20px;
+  padding: 8px 13px;
   font-weight: bold;
-  font-size: 14px;
-}
-
-.panda {
-  background: #ffffff;
-}
-
-.unicorn {
-  background: #f5dcff;
-}
-
-.fox {
-  background: #ffe0b8;
-}
-
-@keyframes float {
-  0%, 100% {
-    translate: 0 0;
-  }
-
-  50% {
-    translate: 0 -12px;
-  }
 }
 
 .section {
-  width: 92%;
-  max-width: 1200px;
-  margin: 55px auto;
+  padding: 42px 5%;
+  scroll-margin-top: 15px;
 }
 
-.section h2 {
-  font-size: clamp(27px, 4vw, 36px);
-  margin-bottom: 8px;
-}
+.section h2 { font-size: 2rem; margin-top: 0; }
 
-.section-intro {
-  color: #746981;
-  font-size: 17px;
-  line-height: 1.6;
-}
+.subtitle { color: #69617f; line-height: 1.6; }
 
-.activity-grid {
+.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin-top: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 18px;
 }
 
-.activity-card {
-  padding: 22px;
-  border-radius: 25px;
+.card {
   background: white;
-  box-shadow: 0 5px 20px #45305b0d;
-  text-align: center;
-  transition: transform .2s;
+  border: 2px solid #eee5ff;
+  border-radius: 23px;
+  padding: 22px;
+  box-shadow: 0 6px 18px #4c2a7510;
+  min-width: 0;
 }
 
-.activity-card:hover {
-  transform: translateY(-5px);
+.card h3 { margin-top: 8px; }
+
+.emoji { font-size: 2.7rem; }
+
+.pink { background: #fff0f6; }
+.blue { background: #ecf9ff; }
+.yellow { background: #fff9dc; }
+.green { background: #edfff0; }
+.purple { background: #f3efff; }
+
+select, input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e2d7f5;
+  border-radius: 12px;
+  background: white;
+  color: var(--ink);
+  margin: 8px 0 14px;
 }
 
-.activity-picture {
-  min-height: 145px;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 85px;
-}
-
-.picture-pink {
-  background: #ffe8f0;
-}
-
-.picture-blue {
-  background: #e3f4ff;
-}
-
-.picture-yellow {
-  background: #fff3cb;
-}
-
-.picture-green {
-  background: #e3f7e9;
-}
-
-.activity-card h3 {
-  font-size: 22px;
-  margin-bottom: 8px;
-}
-
-.activity-card p {
+.result {
+  background: #f5f0ff;
+  padding: 14px;
+  border-radius: 14px;
+  margin-top: 12px;
   line-height: 1.6;
-  color: #746981;
+}
+
+.world-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(220px, 0.8fr);
+  gap: 18px;
+}
+
+.world-panel {
+  background: #eaf8ff;
+  border: 2px solid #c9eaff;
+  border-radius: 24px;
+  padding: 16px;
+  min-width: 0;
+}
+
+.world {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 3px;
+  padding: 8px;
+  background: #d4efff;
+  border-radius: 15px;
+}
+
+.block {
+  aspect-ratio: 1;
+  padding: 0;
+  border-radius: 5px;
+  min-width: 0;
+  font-size: clamp(12px, 2.5vw, 25px);
+  display: grid;
+  place-items: center;
+  background: #fff;
+  border: 1px solid #ffffffaa;
+  color: #302b50;
+}
+
+.block:hover { outline: 2px solid #7857d9; }
+
+.block.selected {
+  outline: 3px solid #7857d9;
+  outline-offset: -2px;
+}
+
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.tools button { flex: 1; }
+
+.small { font-size: 0.9rem; line-height: 1.6; }
+
+.game-question {
+  font-size: 1.35rem;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.answer-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.answer-list button {
+  background: #eae3ff;
+  color: var(--ink);
+}
+
+.answer-list button:disabled { opacity: 0.7; }
+
+.video-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 16px;
+  background: #eee6ff;
+}
+
+.book-page {
+  min-height: 120px;
+  background: #fff8dc;
+  border-radius: 15px;
+  padding: 18px;
+  line-height: 1.8;
 }
 
 footer {
+  padding: 30px 5%;
   text-align: center;
-  padding: 30px 15px;
-  background: white;
-  margin-top: 60px;
+  background: #eee7ff;
+  line-height: 1.8;
 }
 
-@media (max-width: 600px) {
-  header {
-    justify-content: center;
-  }
-
-  .logo {
-    text-align: center;
-  }
-
-  nav {
-    justify-content: center;
-  }
-
-  .hero {
-    padding: 23px;
-  }
-
-  .friend {
-    width: 95px;
-    height: 125px;
-  }
-
-  .friend .face {
-    font-size: 52px;
-  }
+.note {
+  font-size: 0.88rem;
+  color: #6d6380;
+  line-height: 1.6;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .friend {
-    animation: none;
-  }
-
-  .activity-card {
-    transition: none;
-  }
+@media (max-width: 700px) {
+  .hero, .world-layout { grid-template-columns: 1fr; }
+  .hero { padding: 35px 5%; }
+  header { align-items: flex-start; }
+  nav a { padding: 7px; }
 }
 </style>
 </head>
@@ -292,262 +280,562 @@ footer {
 <body>
 
 <header>
-  <div class="logo">🌈 Zumar Wonderland</div>
+  <a class="logo" href="#home" style="text-decoration:none">
+    🌈 Zumar Wonderland
+  </a>
 
-  <nav>
-    <a href="#home">Home 🏡</a>
-    <a href="#friends">Characters 🐼</a>
-    <a href="#learn">Learn 📚</a>
-    <a href="#games">Games 🎮</a>
+  <nav aria-label="Main navigation">
+    <a href="#classes">Classes</a>
+    <a href="#world">Block World</a>
+    <a href="#games">Games</a>
+    <a href="#videos">Videos</a>
+    <a href="#books">Books</a>
+    <a href="#rewards">Rewards</a>
   </nav>
 </header>
 
 <main>
 
 <section class="hero" id="home">
-
-  <div class="hero-text">
-    <p class="eyebrow">✨ YOUR ADVENTURE STARTS HERE!</p>
-
-    <h1>Let's Play & Learn!</h1>
-
+  <div>
+    <span class="tag">✨ LEARN • PLAY • CREATE</span>
+    <h1>Your world.<br>Your adventure.</h1>
     <p>
-      Welcome to Zumar Wonderland!
-      Meet adorable friends, discover exciting activities,
-      and make every day a wonderful adventure.
+      Welcome to Zumar Wonderland, a colourful place to learn,
+      play games, build amazing things, and explore new ideas!
     </p>
-
-    <a class="primary-button" href="#friends">
-      Meet Your Friends! 💗
-    </a>
+    <a href="#world"><button>🌍 Enter My World</button></a>
+    <a href="#classes"><button style="background:#ff8eb4">🎓 Explore Classes</button></a>
   </div>
 
-  <div class="hero-friends">
-
-    <div class="friend panda">
-      <span class="face">🐼</span>
-      <span>Pip</span>
-    </div>
-
-    <div class="friend unicorn">
-      <span class="face">🦄</span>
-      <span>Twinkle</span>
-    </div>
-
-    <div class="friend fox">
-      <span class="face">🦊</span>
-      <span>Foxy</span>
-    </div>
-
-  </div>
-
-</section>
-
-<section class="section" id="friends">
-  <h2>Meet Your Wonderland Friends! 🥰</h2>
-
-  <p class="section-intro">
-    Your new friends are ready to explore with you!
-  </p>
-
-  <div class="activity-grid">
-
-    <div class="activity-card">
-      <div class="activity-picture picture-pink">🐼</div>
-      <h3>Pip the Panda</h3>
-      <p>A curious little panda who loves discovering new things.</p>
-    </div>
-
-    <div class="activity-card">
-      <div class="activity-picture picture-blue">🦄</div>
-      <h3>Twinkle the Unicorn</h3>
-      <p>A magical friend who loves colours, creativity, and imagination.</p>
-    </div>
-
-    <div class="activity-card">
-      <div class="activity-picture picture-yellow">🦊</div>
-      <h3>Foxy the Explorer</h3>
-      <p>A playful fox who is always ready for a new adventure.</p>
-    </div>
-
+  <div class="hero-art" aria-label="Wonderland characters">
+    🐼 🦄 🦊<br>
+    🏰 🌈 ⭐
   </div>
 </section>
 
-<!-- PART 2 WILL GO HERE -->
-<section class="section" id="learn">
-  <h2>📚 Let's Learn Together!</h2>
-  <p class="section-intro">
-    Choose an activity and learn with your Wonderland friends.
+<section class="section" id="classes">
+  <h2>🎓 Your Learning Academy</h2>
+  <p class="subtitle">
+    From your first school adventures to your final school year!
   </p>
 
-  <div class="activity-grid">
+  <div class="card purple">
+    <label for="grade"><strong>Choose your class:</strong></label>
+    <select id="grade">
+      <option value="KG 1">KG 1</option>
+      <option value="KG 2">KG 2</option>
+      <option value="Grade 1">Grade 1</option>
+      <option value="Grade 2">Grade 2</option>
+      <option value="Grade 3">Grade 3</option>
+      <option value="Grade 4">Grade 4</option>
+      <option value="Grade 5">Grade 5</option>
+      <option value="Grade 6" selected>Grade 6</option>
+      <option value="Grade 7">Grade 7</option>
+      <option value="Grade 8">Grade 8</option>
+      <option value="Grade 9">Grade 9</option>
+      <option value="Grade 10">Grade 10</option>
+      <option value="Grade 11">Grade 11</option>
+      <option value="Grade 12">Grade 12</option>
+    </select>
+    <button id="chooseGrade">Open My Classroom</button>
+    <div class="result" id="gradeResult" aria-live="polite">
+      Welcome to Grade 6! 🎒
+    </div>
+  </div>
 
-    <div class="activity-card">
-      <div class="activity-picture picture-pink">🔤</div>
-      <h3>Letter Adventure</h3>
-      <p>Discover letters and learn their sounds.</p>
-      <button class="primary-button" onclick="startLetters()">Play Now!</button>
+  <div class="grid" style="margin-top:18px">
+    <article class="card pink">
+      <div class="emoji">🔤</div>
+      <h3>English & ABC</h3>
+      <p>Letters, spelling, reading, and writing.</p>
+      <a href="#games">Explore activities →</a>
+    </article>
+    <article class="card blue">
+      <div class="emoji">🔢</div>
+      <h3>Maths Lab</h3>
+      <p>Numbers, puzzles, calculations, and challenges.</p>
+      <a href="#games">Play maths →</a>
+    </article>
+    <article class="card green">
+      <div class="emoji">🌙</div>
+      <h3>Arabic & More</h3>
+      <p>Make room for Arabic, science, art, and other subjects.</p>
+      <a href="#books">Explore guidebooks →</a>
+    </article>
+  </div>
+
+  <p class="note">
+    The class levels are ready to explore. Actual lessons and course
+    materials still need to be added for each grade.
+  </p>
+</section>
+
+<section class="section" id="world">
+  <h2>🧱 Wonderland Block World</h2>
+  <p class="subtitle">
+    Inspired by block-building games! Select a block, then tap a square
+    to build your own little world.
+  </p>
+
+  <div class="world-layout">
+    <div class="world-panel">
+      <div class="tools" aria-label="Block tools">
+        <button data-block="🟩" class="block-choice">🌿 Grass</button>
+        <button data-block="🟫" class="block-choice">🟫 Dirt</button>
+        <button data-block="🪨" class="block-choice">🪨 Stone</button>
+        <button data-block="🟦" class="block-choice">💧 Water</button>
+        <button data-block="🪵" class="block-choice">🪵 Wood</button>
+        <button data-block="🧱" class="block-choice">🧱 Brick</button>
+      </div>
+
+      <div id="world" class="world" aria-label="Buildable block grid"></div>
+
+      <div class="tools">
+        <button id="removeBlock" style="background:#e86e90">🧹 Remove block</button>
+        <button id="resetWorld" style="background:#5aaf85">🔄 Reset world</button>
+      </div>
+
+      <p id="worldMessage" class="small" aria-live="polite">
+        Selected block: 🌿 Grass. Tap a square to place it!
+      </p>
     </div>
 
-    <div class="activity-card">
-      <div class="activity-picture picture-blue">🔢</div>
-      <h3>Number Fun</h3>
-      <p>Practise counting with Pip the Panda.</p>
-      <button class="primary-button" onclick="startNumbers()">Play Now!</button>
-    </div>
-
-    <div class="activity-card">
-      <div class="activity-picture picture-yellow">🎨</div>
-      <h3>Colour Challenge</h3>
-      <p>Learn colours with Twinkle the Unicorn.</p>
-      <button class="primary-button" onclick="startColours()">Play Now!</button>
-    </div>
-
+    <aside class="card yellow">
+      <div class="emoji">🏰</div>
+      <h3>Builder's Corner</h3>
+      <p>Try building a house, garden, castle, or school.</p>
+      <ul class="small">
+        <li>Choose a block.</li>
+        <li>Tap any square.</li>
+        <li>Change blocks to decorate.</li>
+        <li>Remove blocks to redesign.</li>
+      </ul>
+      <p><strong>Builder tip:</strong> Use wood for walls and bricks for a castle!</p>
+      <p class="note">
+        This is the first 2D building version. Walking around a 3D world,
+        multiplayer, creatures, and saving shared worlds can be added later.
+      </p>
+    </aside>
   </div>
 </section>
 
 <section class="section" id="games">
-  <h2>🎮 Wonderland Games!</h2>
-  <p class="section-intro">
-    Play a game, answer questions, and collect stars!
+  <h2>🎮 Games Arcade</h2>
+  <p class="subtitle">Play a quick challenge and earn Wonderland stars!</p>
+
+  <div class="grid">
+    <article class="card pink">
+      <div class="emoji">🔢</div>
+      <h3>Number Challenge</h3>
+      <div id="question" class="game-question">What is 5 + 3?</div>
+      <div id="answers" class="answer-list">
+        <button data-answer="7">7</button>
+        <button data-answer="8">8</button>
+        <button data-answer="9">9</button>
+        <button data-answer="10">10</button>
+      </div>
+      <p id="gameMessage" aria-live="polite">Choose your answer!</p>
+      <button id="nextQuestion">Next Question ➜</button>
+    </article>
+
+    <article class="card blue">
+      <div class="emoji">🧠</div>
+      <h3>Memory Challenge</h3>
+      <p>Remember this pattern, then hide it and try to recall it!</p>
+      <div id="memoryPattern" class="result" style="font-size:1.5rem">
+        🌟 🐼 🍎
+      </div>
+      <button id="hidePattern">Hide Pattern</button>
+      <button id="showPattern" style="background:#4b9cce">Show Again</button>
+      <p id="memoryMessage" aria-live="polite">Look carefully!</p>
+    </article>
+
+    <article class="card green">
+      <div class="emoji">🔤</div>
+      <h3>Word Builder</h3>
+      <p>Which word starts with the letter B?</p>
+      <div class="answer-list">
+        <button data-word="Apple">🍎 Apple</button>
+        <button data-word="Ball">⚽ Ball</button>
+        <button data-word="Cat">🐱 Cat</button>
+        <button data-word="Dog">🐶 Dog</button>
+      </div>
+      <p id="wordMessage" aria-live="polite">Choose a word!</p>
+    </article>
+
+    <article class="card yellow">
+      <div class="emoji">🎨</div>
+      <h3>Colour Discovery</h3>
+      <p>Tap a colour to discover its name.</p>
+      <div class="tools">
+        <button data-colour="Red" style="background:#e65c65">Red</button>
+        <button data-colour="Blue" style="background:#438ddd">Blue</button>
+        <button data-colour="Green" style="background:#299e68">Green</button>
+        <button data-colour="Yellow" style="background:#d9aa16;color:#302b50">Yellow</button>
+      </div>
+      <p id="colourMessage" aria-live="polite">Choose a colour!</p>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="videos">
+  <h2>🎬 Wonderland Video Screen</h2>
+  <p class="subtitle">
+    Watch educational videos here. You can add suitable public YouTube
+    videos or your own videos that you have permission to share.
   </p>
 
-  <div class="activity-card">
-    <div class="activity-picture picture-green">⭐</div>
-    <h3 id="gameTitle">The Magic Number Game</h3>
-    <p id="gameQuestion">Can you guess the secret number?</p>
+  <div class="grid">
+    <article class="card purple">
+      <div class="emoji">📺</div>
+      <h3>Watch a Lesson</h3>
+      <label for="videoId">YouTube video ID</label>
+      <input id="videoId" placeholder="Enter a video ID">
+      <button id="loadVideo">Load Video</button>
+      <p class="note">
+        A video ID is the part after v= in a YouTube link.
+        Only use videos suitable for your audience.
+      </p>
+      <p id="videoMessage" aria-live="polite"></p>
+    </article>
 
-    <div id="gameChoices" class="activity-grid"></div>
+    <article class="card">
+      <h3>▶️ Video Player</h3>
+      <iframe
+        id="videoFrame"
+        class="video-frame"
+        title="Educational video player"
+        src="about:blank"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+      <p class="note">
+        Some videos cannot be embedded because their owners disable
+        playback on other websites.
+      </p>
+    </article>
+  </div>
+</section>
 
-    <p id="gameFeedback" aria-live="polite">
-      Choose a number from 1 to 5 to begin!
+<section class="section" id="books">
+  <h2>📚 Guidebook Library</h2>
+  <p class="subtitle">
+    Start with these sample learning books. We can add complete books,
+    illustrations, worksheets, and videos next.
+  </p>
+
+  <div class="grid">
+    <article class="card pink">
+      <div class="emoji">🔤</div>
+      <h3>ABC Adventure</h3>
+      <p>Explore letters and their sounds.</p>
+      <button data-book="abc">Open Guidebook</button>
+    </article>
+
+    <article class="card blue">
+      <div class="emoji">✂️</div>
+      <h3>Crafts & Creativity</h3>
+      <p>Ideas for drawing, paper crafts, and fun projects.</p>
+      <button data-book="crafts">Open Guidebook</button>
+    </article>
+
+    <article class="card green">
+      <div class="emoji">🌙</div>
+      <h3>Arabic Starter</h3>
+      <p>Begin exploring Arabic letters and words.</p>
+      <button data-book="arabic">Open Guidebook</button>
+    </article>
+  </div>
+
+  <div class="card" style="margin-top:18px">
+    <h3 id="bookTitle">📖 Your Guidebook</h3>
+    <div id="bookPage" class="book-page" aria-live="polite">
+      Choose a guidebook above to begin.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rewards">
+  <h2>⭐ Wonderland Rewards</h2>
+
+  <div class="grid">
+    <article class="card yellow">
+      <div class="emoji">🪙</div>
+      <h3>Your Virtual Coins</h3>
+      <p style="font-size:2rem;font-weight:bold">
+        <span id="coins">0</span> coins
+      </p>
+      <p class="small">
+        These are practice coins for this browser only. They are not real money.
+      </p>
+      <button id="bonus">Collect Daily Practice Bonus (+5)</button>
+      <p id="bonusMessage" aria-live="polite"></p>
+    </article>
+
+    <article class="card purple">
+      <div class="emoji">🌟</div>
+      <h3>Your Stars</h3>
+      <p style="font-size:2rem;font-weight:bold">
+        <span id="stars">0</span> stars
+      </p>
+      <p>Correct answers earn stars. Keep practising!</p>
+    </article>
+  </div>
+
+  <p class="note">
+    For now, coins and stars are stored in this browser. They are not
+    accounts, cannot be transferred, and do not have cash value.
+  </p>
+</section>
+
+<section class="section">
+  <div class="card pink">
+    <h2>✉️ Student Accounts — Coming Later</h2>
+    <p>
+      We can add secure Google sign-in and private student progress after
+      the learning features are ready.
     </p>
-
-    <p>⭐ Stars collected: <strong id="starCount">0</strong></p>
-
-    <button class="primary-button" onclick="startNumberGame()">
-      Start Number Game
-    </button>
+    <p class="note">
+      Never type your Gmail password into a homemade form. Real Google
+      sign-in must use Google's official secure sign-in process.
+      Ask your dad to help set it up.
+    </p>
   </div>
 </section>
 
-<section class="section" id="reward">
-  <div class="activity-card">
-    <div class="activity-picture picture-pink">🏆</div>
-    <h2>Your Wonderland Rewards!</h2>
-    <p>Keep learning and playing to earn stars.</p>
-    <p>🌟 Total stars: <strong id="rewardCount">0</strong></p>
-    <button class="primary-button" onclick="resetStars()">
-      Start a Fresh Challenge
-    </button>
-  </div>
-</section>
+</main>
 
 <footer>
-  <h3>🌈 Zumar Wonderland</h3>
-  <p>Learn, play, imagine, and shine! ✨</p>
-  <p>Made with 💗 by Zumar</p>
+  <strong>🌈 Zumar Wonderland</strong><br>
+  Learn something. Build something. Imagine anything!<br>
+  <span class="note">A learning and creativity project.</span>
 </footer>
 
 <script>
-let stars = 0;
-let secretNumber = 1;
-let answered = false;
+/* CLASS SELECTOR */
+document.getElementById("chooseGrade").addEventListener("click", function () {
+  const grade = document.getElementById("grade").value;
+  document.getElementById("gradeResult").textContent =
+    "🎉 Welcome to " + grade + "! Your Wonderland classroom is ready to explore.";
+});
 
-function updateStars() {
-  document.getElementById("starCount").textContent = stars;
-  document.getElementById("rewardCount").textContent = stars;
-}
+/* BLOCK WORLD */
+const world = document.getElementById("world");
+const worldMessage = document.getElementById("worldMessage");
+let selectedBlock = "🟩";
+let removeMode = false;
+let blocks = Array(100).fill("");
 
-function earnStar() {
-  stars++;
-  updateStars();
-}
+function drawWorld() {
+  world.innerHTML = "";
 
-function showActivity(title, question, choices, correct, message) {
-  document.getElementById("gameTitle").textContent = title;
-  document.getElementById("gameQuestion").textContent = question;
-  document.getElementById("gameFeedback").textContent = message;
-
-  const area = document.getElementById("gameChoices");
-  area.innerHTML = "";
-  answered = false;
-
-  choices.forEach(function(choice) {
+  blocks.forEach(function (block, index) {
     const button = document.createElement("button");
-    button.className = "primary-button";
-    button.textContent = choice;
+    button.className = "block";
+    button.textContent = block || "·";
+    button.setAttribute("aria-label", "Block square " + (index + 1));
 
-    button.onclick = function() {
-      if (answered) return;
-      answered = true;
-
-      if (choice === correct) {
-        document.getElementById("gameFeedback").textContent =
-          "🎉 Fantastic! You got it right! You earned a star!";
-        earnStar();
+    button.addEventListener("click", function () {
+      if (removeMode) {
+        blocks[index] = "";
+        worldMessage.textContent = "🧹 Block removed!";
       } else {
-        document.getElementById("gameFeedback").textContent =
-          "💗 Good try! The correct answer is " + correct + ". Try another activity!";
+        blocks[index] = selectedBlock;
+        worldMessage.textContent = "✨ You placed " + selectedBlock + "!";
       }
-    };
+      drawWorld();
+    });
 
-    area.appendChild(button);
+    world.appendChild(button);
   });
 }
 
-function startNumberGame() {
-  secretNumber = Math.floor(Math.random() * 5) + 1;
+document.querySelectorAll(".block-choice").forEach(function (button) {
+  button.addEventListener("click", function () {
+    selectedBlock = button.dataset.block;
+    removeMode = false;
+    worldMessage.textContent = "Selected block: " + selectedBlock + ". Tap a square!";
+  });
+});
 
-  showActivity(
-    "⭐ The Magic Number Game",
-    "Which number am I thinking of?",
-    ["1", "2", "3", "4", "5"],
-    String(secretNumber),
-    "Pick your answer!"
-  );
+document.getElementById("removeBlock").addEventListener("click", function () {
+  removeMode = true;
+  worldMessage.textContent = "🧹 Removal mode! Tap a square to remove its block.";
+});
+
+document.getElementById("resetWorld").addEventListener("click", function () {
+  blocks = Array(100).fill("");
+  removeMode = false;
+  drawWorld();
+  worldMessage.textContent = "🌱 Your world has been reset. Start building!";
+});
+
+drawWorld();
+
+/* VIRTUAL REWARDS */
+let stars = 0;
+let coins = 0;
+
+function updateRewards() {
+  document.getElementById("stars").textContent = stars;
+  document.getElementById("coins").textContent = coins;
 }
 
-function startLetters() {
-  showActivity(
-    "🔤 Letter Adventure",
-    "Which letter does APPLE begin with?",
-    ["A", "B", "C"],
-    "A",
-    "Help Pip find the first letter!"
-  );
+function earnStar() {
+  stars += 1;
+  coins += 2;
+  updateRewards();
 }
 
-function startNumbers() {
-  showActivity(
-    "🔢 Number Fun",
-    "How many stars are here? ⭐⭐⭐",
-    ["2", "3", "4"],
-    "3",
-    "Count the stars carefully!"
-  );
+/* NUMBER GAME */
+const questions = [
+  { q: "What is 5 + 3?", answers: ["7", "8", "9", "10"], correct: "8" },
+  { q: "What is 10 - 4?", answers: ["5", "6", "7", "8"], correct: "6" },
+  { q: "What is 3 × 4?", answers: ["7", "12", "14", "16"], correct: "12" },
+  { q: "What is 20 ÷ 5?", answers: ["2", "3", "4", "5"], correct: "4" },
+  { q: "What is 9 + 6?", answers: ["13", "14", "15", "16"], correct: "15" }
+];
+
+let questionIndex = 0;
+let answered = false;
+
+function showQuestion() {
+  answered = false;
+  const item = questions[questionIndex];
+  document.getElementById("question").textContent = item.q;
+  document.getElementById("gameMessage").textContent = "Choose your answer!";
+
+  const answerArea = document.getElementById("answers");
+  answerArea.innerHTML = "";
+
+  item.answers.forEach(function (answer) {
+    const button = document.createElement("button");
+    button.textContent = answer;
+    button.dataset.answer = answer;
+
+    button.addEventListener("click", function () {
+      if (answered) return;
+      answered = true;
+
+      if (answer === item.correct) {
+        document.getElementById("gameMessage").textContent = "🎉 Correct! You earned a star and 2 coins!";
+        earnStar();
+      } else {
+        document.getElementById("gameMessage").textContent =
+          "Almost! The correct answer is " + item.correct + ". Try the next one!";
+      }
+
+      answerArea.querySelectorAll("button").forEach(function (b) {
+        b.disabled = true;
+      });
+    });
+
+    answerArea.appendChild(button);
+  });
 }
 
-function startColours() {
-  showActivity(
-    "🎨 Colour Challenge",
-    "What colour is a banana usually?",
-    ["Blue", "Yellow", "Purple"],
-    "Yellow",
-    "Twinkle needs your help!"
-  );
-}
+document.getElementById("nextQuestion").addEventListener("click", function () {
+  questionIndex = (questionIndex + 1) % questions.length;
+  showQuestion();
+});
 
-function resetStars() {
-  stars = 0;
-  updateStars();
-  document.getElementById("gameFeedback").textContent =
-    "Your stars have been reset. Ready for a new challenge? 🌈";
-}
+/* WORD GAME */
+document.querySelectorAll("[data-word]").forEach(function (button) {
+  button.addEventListener("click", function () {
+    const message = document.getElementById("wordMessage");
 
-updateStars();
+    if (button.dataset.word === "Ball") {
+      message.textContent = "🎉 Correct! Ball starts with B!";
+      earnStar();
+    } else {
+      message.textContent = "Good try! Look for the word that starts with B.";
+    }
+  });
+});
+
+/* COLOUR GAME */
+document.querySelectorAll("[data-colour]").forEach(function (button) {
+  button.addEventListener("click", function () {
+    document.getElementById("colourMessage").textContent =
+      "🎨 You chose " + button.dataset.colour + "!";
+  });
+});
+
+/* MEMORY GAME */
+const memoryPattern = document.getElementById("memoryPattern");
+
+document.getElementById("hidePattern").addEventListener("click", function () {
+  memoryPattern.textContent = "❔ ❔ ❔";
+  document.getElementById("memoryMessage").textContent =
+    "What were the three pictures? Click Show Again to check.";
+});
+
+document.getElementById("showPattern").addEventListener("click", function () {
+  memoryPattern.textContent = "🌟 🐼 🍎";
+  document.getElementById("memoryMessage").textContent =
+    "Remember: star, panda, apple!";
+});
+
+/* VIDEO PLAYER */
+document.getElementById("loadVideo").addEventListener("click", function () {
+  const input = document.getElementById("videoId").value.trim();
+  const message = document.getElementById("videoMessage");
+
+  if (!/^[a-zA-Z0-9_-]{11}$/.test(input)) {
+    message.textContent = "Please enter a valid 11-character YouTube video ID.";
+    return;
+  }
+
+  document.getElementById("videoFrame").src =
+    "https://www.youtube-nocookie.com/embed/" + input;
+  message.textContent = "Video loaded! If it does not play, its owner may have disabled embedding.";
+});
+
+/* GUIDEBOOKS */
+const books = {
+  abc: {
+    title: "🔤 ABC Adventure",
+    text: "A is for Apple 🍎<br>B is for Ball ⚽<br>C is for Cat 🐱<br><br>Practice saying each letter and its sound!"
+  },
+  crafts: {
+    title: "✂️ Crafts & Creativity",
+    text: "Project: Make a paper garden 🌷<br><br>1. Draw flowers on paper.<br>2. Colour the flowers.<br>3. Add leaves and stems.<br>4. Ask an adult to help with scissors."
+  },
+  arabic: {
+    title: "🌙 Arabic Starter",
+    text: "ا — Alif<br>ب — Baa<br>ت — Taa<br><br>Practise writing each letter carefully. Ask a teacher to help you with pronunciation."
+  }
+};
+
+document.querySelectorAll("[data-book]").forEach(function (button) {
+  button.addEventListener("click", function () {
+    const book = books[button.dataset.book];
+    document.getElementById("bookTitle").textContent = book.title;
+    document.getElementById("bookPage").innerHTML = book.text;
+  });
+});
+
+/* VIRTUAL COIN BONUS */
+let bonusCollected = false;
+
+document.getElementById("bonus").addEventListener("click", function () {
+  const message = document.getElementById("bonusMessage");
+
+  if (bonusCollected) {
+    message.textContent = "You have already collected your bonus in this visit!";
+    return;
+  }
+
+  coins += 5;
+  bonusCollected = true;
+  updateRewards();
+  message.textContent = "🌟 You collected 5 practice coins!";
+});
+
+showQuestion();
+updateRewards();
 </script>
 
-</main>
 </body>
-</html>  
+</html>
