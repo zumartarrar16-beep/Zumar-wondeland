@@ -3,168 +3,298 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zumar Wonderland ✨</title>
+
+<title>Zumar Wonderland</title>
 
 <style>
+:root {
+    --pink: #ffb7d5;
+    --purple: #cdb8ff;
+    --blue: #bcecff;
+    --yellow: #fff0a8;
+    --green: #c7f5d2;
+    --dark: #47385e;
+    --white: #ffffff;
+}
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #fff7fc;
-    color: #44345b;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    color: var(--dark);
+    background: linear-gradient(135deg, #fff5fb, #f0f5ff, #f4fff4);
 }
 
-header {
-    background: white;
-    padding: 20px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    box-shadow: 0 3px 15px #eadcf0;
-}
-
-.logo {
-    color: #a64dce;
-    font-size: 25px;
-    font-weight: bold;
-}
-
-nav a {
-    text-decoration: none;
-    color: #655276;
-    margin: 8px;
-    font-weight: bold;
+button, input, select {
+    font: inherit;
 }
 
 button {
-    border: none;
-    background: #a64dce;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 25px;
     cursor: pointer;
-    font-size: 15px;
+    border: none;
+    transition: transform .2s, box-shadow .2s;
 }
 
 button:hover {
-    background: #8739ad;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px #5c4c7020;
+}
+
+header {
+    padding: 24px 18px;
+    text-align: center;
+    background: linear-gradient(120deg, var(--pink), var(--purple), var(--blue));
+}
+
+.logo {
+    margin: 0;
+    font-size: clamp(30px, 5vw, 48px);
+}
+
+header p {
+    margin-bottom: 0;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 9px;
+    padding: 15px;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    box-shadow: 0 3px 12px #47385e10;
+}
+
+nav button {
+    padding: 10px 15px;
+    border-radius: 20px;
+    background: #f3edff;
+    color: var(--dark);
+    font-weight: bold;
+}
+
+nav button.active {
+    background: var(--purple);
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 22px;
+}
+
+.page {
+    display: none;
+    animation: appear .25s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .hero {
-    margin: 30px auto;
-    padding: 55px 8%;
-    max-width: 1150px;
-    border-radius: 35px;
-    background: linear-gradient(135deg, #f9d9ff, #dceaff, #fff0d5);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.hero-text {
-    max-width: 560px;
-}
-
-.hero h1 {
-    font-size: clamp(38px, 6vw, 65px);
-    line-height: 1.1;
-    margin-bottom: 15px;
-}
-
-.hero h1 span {
-    color: #a64dce;
-}
-
-.hero p {
-    font-size: 18px;
-    line-height: 1.7;
-}
-
-.hero-art {
-    font-size: 120px;
     text-align: center;
+    padding: 35px 20px;
+    border-radius: 28px;
+    background: linear-gradient(135deg, #ffe0ef, #e9ddff, #d9f5ff);
 }
 
-section {
-    padding: 35px 7%;
+.hero h2 {
+    font-size: clamp(26px, 4vw, 40px);
+    margin: 8px 0;
 }
 
-h2 {
-    font-size: 32px;
+.hero-emoji {
+    font-size: 75px;
 }
 
-.subtitle {
-    color: #82738f;
+.section-title {
+    margin-top: 35px;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 16px;
 }
 
 .card {
     background: white;
-    border-radius: 25px;
-    padding: 25px;
+    padding: 20px;
+    border-radius: 22px;
     text-align: center;
-    box-shadow: 0 6px 20px #eadcf0;
-    transition: transform 0.2s;
+    box-shadow: 0 5px 18px #47385e10;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.pet {
+.pet-emoji {
     font-size: 65px;
+    display: block;
+    margin: 10px;
 }
 
 .card h3 {
-    margin-bottom: 8px;
+    margin: 8px 0;
 }
 
-.learning {
-    background: #f1e8ff;
+.card p {
+    line-height: 1.5;
 }
 
-.game {
-    background: #fff0d5;
+.primary {
+    background: #9c83ef;
+    color: white;
 }
 
-.message {
-    min-height: 28px;
-    color: #8739ad;
+.secondary {
+    background: var(--pink);
+    color: var(--dark);
+}
+
+.green {
+    background: #bceecb;
+    color: var(--dark);
+}
+
+.yellow {
+    background: var(--yellow);
+    color: var(--dark);
+}
+
+.action {
+    padding: 11px 17px;
+    border-radius: 15px;
+    margin: 4px;
     font-weight: bold;
 }
 
-footer {
-    background: #44345b;
-    color: white;
-    text-align: center;
-    padding: 30px;
+.pill {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 15px;
+    background: #f0eaff;
+    margin: 4px;
 }
 
-@media (max-width: 600px) {
-    header {
-        justify-content: center;
-        text-align: center;
+.panel {
+    background: white;
+    padding: 24px;
+    border-radius: 24px;
+    margin: 20px 0;
+    box-shadow: 0 5px 18px #47385e10;
+}
+
+label {
+    display: block;
+    margin: 12px 0 5px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e2d9f7;
+    border-radius: 12px;
+    background: #fff;
+    color: var(--dark);
+}
+
+.notice {
+    padding: 14px;
+    border-radius: 14px;
+    background: #fff4cf;
+    line-height: 1.6;
+}
+
+.result {
+    min-height: 28px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+footer {
+    padding: 25px;
+    text-align: center;
+    background: #eee6ff;
+    margin-top: 35px;
+}
+
+.bunny-helper {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 10;
+}
+
+.bunny-button {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: #ffe0f0;
+    font-size: 42px;
+    box-shadow: 0 5px 18px #47385e30;
+}
+
+.bunny-chat {
+    display: none;
+    width: min(310px, calc(100vw - 36px));
+    margin-bottom: 10px;
+    background: white;
+    padding: 18px;
+    border-radius: 22px;
+    box-shadow: 0 5px 25px #47385e30;
+}
+
+.bunny-chat.open {
+    display: block;
+}
+
+.bunny-chat p {
+    line-height: 1.5;
+}
+
+.bunny-options {
+    display: grid;
+    gap: 8px;
+}
+
+.bunny-options button {
+    padding: 10px;
+    border-radius: 12px;
+    background: #f1eaff;
+    color: var(--dark);
+    text-align: left;
+}
+
+.small {
+    font-size: 13px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 550px) {
+    main {
+        padding: 14px;
     }
 
-    .hero {
-        text-align: center;
-        justify-content: center;
+    nav {
+        position: static;
     }
 
-    .hero-art {
-        font-size: 85px;
+    nav button {
+        padding: 9px 11px;
     }
 }
 </style>
@@ -173,235 +303,621 @@ footer {
 <body>
 
 <header>
-    <div class="logo">✨ Zumar Wonderland</div>
-
-    <nav>
-        <a href="#pets">My Pets</a>
-        <a href="#learn">Learn</a>
-        <a href="#games">Games</a>
-    </nav>
-
-    <button onclick="welcome()">Hello, Wonder Explorer!</button>
+    <h1 class="logo">🌈 Zumar Wonderland</h1>
+    <p>A magical world where children learn, play, and discover!</p>
 </header>
+
+<nav>
+    <button class="active" data-page="home">🏡 Home</button>
+    <button data-page="pets">🐾 Pets</button>
+    <button data-page="learn">📚 Learning</button>
+    <button data-page="games">🎮 Games</button>
+    <button data-page="membership">💎 Membership</button>
+    <button data-page="account">👤 Sign Up</button>
+</nav>
 
 <main>
 
+<!-- HOME -->
+
+<section id="home" class="page active">
+
     <div class="hero">
-        <div class="hero-text">
-            <p>🌈 YOUR IMAGINATION LIVES HERE</p>
+        <div class="hero-emoji">🦊🐰🐱</div>
+        <h2>Welcome to Zumar Wonderland!</h2>
+        <p>Discover adorable pets, play fun games, and learn something new!</p>
 
-            <h1>A little magic.<br>
-            <span>A lot of wonder.</span></h1>
+        <button class="action primary" onclick="showPage('pets')">
+            Meet the Pets 🐾
+        </button>
 
-            <p>
-                Welcome to Zumar Wonderland!
-                Meet magical pets, learn amazing things,
-                play fun games, and explore a world
-                full of imagination.
-            </p>
+        <button class="action secondary" onclick="showPage('learn')">
+            Start Learning 📚
+        </button>
 
-            <button onclick="startAdventure()">
-                Start My Adventure ✨
-            </button>
-
-            <p class="message" id="welcomeMessage"></p>
-        </div>
-
-        <div class="hero-art">🦄🌈✨</div>
+        <button class="action green" onclick="showPage('account')">
+            Explore Free Trial 🎁
+        </button>
     </div>
 
-    <section id="pets">
-        <h2>🐾 Meet Your Wonder Pets</h2>
-        <p class="subtitle">
-            Which magical friend will you choose?
-        </p>
+    <h2 class="section-title">✨ Explore Your Wonderland</h2>
 
-        <div class="grid">
-
-            <div class="card">
-                <div class="pet">🦊</div>
-                <h3>Foxy</h3>
-                <p>A brave little fox who loves adventures.</p>
-                <button onclick="choosePet('Foxy')">
-                    Choose Foxy
-                </button>
-            </div>
-
-            <div class="card">
-                <div class="pet">🐼</div>
-                <h3>Mochi</h3>
-                <p>A cuddly panda who loves making friends.</p>
-                <button onclick="choosePet('Mochi')">
-                    Choose Mochi
-                </button>
-            </div>
-
-            <div class="card">
-                <div class="pet">🐉</div>
-                <h3>Nova</h3>
-                <p>A tiny dragon with big dreams.</p>
-                <button onclick="choosePet('Nova')">
-                    Choose Nova
-                </button>
-            </div>
-
-            <div class="card">
-                <div class="pet">🐸</div>
-                <h3>Bubbles</h3>
-                <p>A funny frog who loves to jump.</p>
-                <button onclick="choosePet('Bubbles')">
-                    Choose Bubbles
-                </button>
-            </div>
-
-        </div>
-
-        <p class="message" id="petMessage"></p>
-
-        <div class="card" style="margin-top:25px;">
-            <div class="pet">🥚✨</div>
-            <h3>A Mystery Egg!</h3>
-            <p>Can you hatch a surprise pet?</p>
-
-            <button onclick="hatchPet()">Hatch My Egg!</button>
-
-            <p class="message" id="eggMessage"></p>
-        </div>
-    </section>
-
-    <section class="learning" id="learn">
-        <h2>🧠 Learn Something Amazing</h2>
-        <p class="subtitle">
-            Choose a subject and begin your learning adventure.
-        </p>
-
-        <div class="grid">
-
-            <div class="card">
-                <div class="pet">🔬</div>
-                <h3>Wonder Science</h3>
-                <p>Discover animals, space, and our planet.</p>
-                <button onclick="openLesson('Science')">
-                    Explore Science
-                </button>
-            </div>
-
-            <div class="card">
-                <div class="pet">🔢</div>
-                <h3>Maths Quest</h3>
-                <p>Challenge your brain with numbers.</p>
-                <button onclick="openLesson('Maths')">
-                    Explore Maths
-                </button>
-            </div>
-
-            <div class="card">
-                <div class="pet">📚</div>
-                <h3>Arabic Corner</h3>
-                <p>Explore Arabic letters and words.</p>
-                <button onclick="openLesson('Arabic')">
-                    Learn Arabic
-                </button>
-            </div>
-
-            <div class="card">
-                <div class="pet">🎨</div>
-                <h3>Creative Studio</h3>
-                <p>Let your imagination shine!</p>
-                <button onclick="openLesson('Art')">
-                    Create Something
-                </button>
-            </div>
-
-        </div>
-
-        <p class="message" id="lessonMessage"></p>
-    </section>
-
-    <section id="games" class="game">
-        <h2>🎮 Wonder Games</h2>
-        <p>Ready for a tiny challenge?</p>
+    <div class="grid">
 
         <div class="card">
-            <div class="pet">⭐</div>
-            <h3>Guess the Magic Number!</h3>
-            <p>I'm thinking of a number from 1 to 5.</p>
-
-            <input
-                id="numberGuess"
-                type="number"
-                min="1"
-                max="5"
-                placeholder="Choose 1–5"
-                style="padding:12px; width:130px; border-radius:12px; border:1px solid #ddd;"
-            >
-
-            <button onclick="guessNumber()">Guess!</button>
-
-            <p class="message" id="gameMessage"></p>
+            <span class="pet-emoji">🐱</span>
+            <h3>Pet Paradise</h3>
+            <p>Meet cats, bunnies, puppies, foxes, and more.</p>
+            <button class="action secondary"
+                onclick="showPage('pets')">Explore Pets</button>
         </div>
-    </section>
+
+        <div class="card">
+            <span class="pet-emoji">📖</span>
+            <h3>Learning Garden</h3>
+            <p>Explore maths, English, science, and more.</p>
+            <button class="action primary"
+                onclick="showPage('learn')">Start Learning</button>
+        </div>
+
+        <div class="card">
+            <span class="pet-emoji">🎮</span>
+            <h3>Fun Games</h3>
+            <p>Play a little game and test your skills.</p>
+            <button class="action green"
+                onclick="showPage('games')">Play Games</button>
+        </div>
+
+        <div class="card">
+            <span class="pet-emoji">💎</span>
+            <h3>Wonderland Membership</h3>
+            <p>Explore our planned membership options.</p>
+            <button class="action yellow"
+                onclick="showPage('membership')">See Plans</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PETS -->
+
+<section id="pets" class="page">
+
+    <div class="hero">
+        <div class="hero-emoji">🐾</div>
+        <h2>Welcome to Pet Paradise!</h2>
+        <p>Choose your favourite fluffy friend.</p>
+    </div>
+
+    <h2 class="section-title">🐱 Choose a Pet</h2>
+
+    <div class="grid" id="petGrid"></div>
+
+    <div class="panel">
+        <h2>🥚 Mystery Egg</h2>
+        <p>What's hiding inside? Open the egg and discover a surprise!</p>
+        <button class="action yellow" onclick="openEgg()">
+            Open Mystery Egg!
+        </button>
+        <div class="result" id="eggResult"></div>
+    </div>
+
+    <div class="panel">
+        <h2>💗 Your Favourite Pet</h2>
+        <p id="chosenPet">You haven't chosen a pet yet.</p>
+    </div>
+
+</section>
+
+
+<!-- LEARNING -->
+
+<section id="learn" class="page">
+
+    <div class="hero">
+        <div class="hero-emoji">📚🌷</div>
+        <h2>Learning Garden</h2>
+        <p>Choose something you would like to learn!</p>
+    </div>
+
+    <h2 class="section-title">Choose a Subject</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <span class="pet-emoji">🔢</span>
+            <h3>Maths</h3>
+            <p>Numbers, patterns, and puzzles.</p>
+            <button class="action primary"
+                onclick="chooseSubject('Maths')">Explore Maths</button>
+        </div>
+
+        <div class="card">
+            <span class="pet-emoji">🔤</span>
+            <h3>English</h3>
+            <p>Words, spelling, and reading.</p>
+            <button class="action secondary"
+                onclick="chooseSubject('English')">Explore English</button>
+        </div>
+
+        <div class="card">
+            <span class="pet-emoji">🔬</span>
+            <h3>Science</h3>
+            <p>Discover how the world works.</p>
+            <button class="action green"
+                onclick="chooseSubject('Science')">Explore Science</button>
+        </div>
+
+        <div class="card">
+            <span class="pet-emoji">🌍</span>
+            <h3>Geography</h3>
+            <p>Explore countries and our planet.</p>
+            <button class="action yellow"
+                onclick="chooseSubject('Geography')">Explore Geography</button>
+        </div>
+
+        <div class="card">
+            <span class="pet-emoji">🕌</span>
+            <h3>Arabic & Islamic Learning</h3>
+            <p>Explore Arabic letters and Islamic learning.</p>
+            <button class="action primary"
+                onclick="chooseSubject('Arabic & Islamic Learning')">
+                Explore
+            </button>
+        </div>
+
+        <div class="card">
+            <span class="pet-emoji">🎨</span>
+            <h3>Arts & Crafts</h3>
+            <p>Make something creative!</p>
+            <button class="action secondary"
+                onclick="chooseSubject('Arts & Crafts')">Get Creative</button>
+        </div>
+
+    </div>
+
+    <div class="panel">
+        <h3>🌟 Your Selection</h3>
+        <div class="result" id="subjectResult">
+            Choose a subject to see it here!
+        </div>
+    </div>
+
+</section>
+
+
+<!-- GAMES -->
+
+<section id="games" class="page">
+
+    <div class="hero">
+        <div class="hero-emoji">🎮✨</div>
+        <h2>Wonderland Games</h2>
+        <p>Ready for a little challenge?</p>
+    </div>
+
+    <div class="panel">
+        <h2>🔢 Guess the Number</h2>
+        <p>I'm thinking of a number from 1 to 10. Can you guess it?</p>
+
+        <label for="guessInput">Your guess</label>
+        <input id="guessInput" type="number" min="1" max="10"
+            placeholder="Enter a number from 1 to 10">
+
+        <button class="action primary" onclick="checkGuess()">
+            Check My Guess
+        </button>
+
+        <button class="action secondary" onclick="resetGuess()">
+            Try a New Game
+        </button>
+
+        <div class="result" id="guessResult"></div>
+    </div>
+
+    <div class="panel">
+        <h2>🐰 Bunny's Quick Quiz</h2>
+        <p id="quizQuestion">Which animal says meow?</p>
+
+        <div class="grid">
+            <button class="action secondary" onclick="answerQuiz('Dog')">
+                🐶 Dog
+            </button>
+            <button class="action primary" onclick="answerQuiz('Cat')">
+                🐱 Cat
+            </button>
+            <button class="action green" onclick="answerQuiz('Duck')">
+                🦆 Duck
+            </button>
+        </div>
+
+        <div class="result" id="quizResult"></div>
+    </div>
+
+</section>
+
+
+<!-- MEMBERSHIP -->
+
+<section id="membership" class="page">
+
+    <div class="hero">
+        <div class="hero-emoji">💎🌈</div>
+        <h2>Wonderland Membership</h2>
+        <p>Explore our planned membership options.</p>
+    </div>
+
+    <div class="notice">
+        <strong>Important:</strong> These are demonstration plans.
+        Membership payments and the free-trial timer are not connected yet.
+        No payment will be taken on this page.
+    </div>
+
+    <div class="grid section-title">
+
+        <div class="card">
+            <span class="pet-emoji">🌷</span>
+            <h3>Free Explorer</h3>
+            <h2>Free</h2>
+            <p>Explore the homepage and available free activities.</p>
+            <button class="action green"
+                onclick="showPage('home')">Explore</button>
+        </div>
+
+        <div class="card">
+            <span class="pet-emoji">⭐</span>
+            <h3>Monthly Wonder</h3>
+            <h2>Price to be decided</h2>
+            <p>Planned access to premium activities.</p>
+            <button class="action primary"
+                onclick="showPage('account')">Preview Sign-Up</button>
+        </div>
+
+        <div class="card">
+            <span class="pet-emoji">👑</span>
+            <h3>Yearly Wonder</h3>
+            <h2>Price to be decided</h2>
+            <p>Planned yearly membership.</p>
+            <button class="action secondary"
+                onclick="showPage('account')">Preview Sign-Up</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SIGN-UP DEMO -->
+
+<section id="account" class="page">
+
+    <div class="hero">
+        <div class="hero-emoji">🎁🐰</div>
+        <h2>Welcome, Future Explorer!</h2>
+        <p>Preview how registration could look.</p>
+    </div>
+
+    <div class="panel">
+
+        <div class="notice">
+            <strong>Demo only:</strong> This page does not create accounts,
+            start a real trial, send emails, or process payments.
+            Do not enter a real password or card details.
+        </div>
+
+        <h2>📝 Registration Preview</h2>
+
+        <label for="demoEmail">Email address</label>
+        <input id="demoEmail" type="email"
+            placeholder="example@example.com" autocomplete="off">
+
+        <label for="demoPassword">Create a pretend password</label>
+        <input id="demoPassword" type="password"
+            placeholder="Use pretend details only" autocomplete="off">
+
+        <button class="action primary" onclick="previewTrial()">
+            Preview My Free Trial
+        </button>
+
+        <div class="result" id="accountResult"></div>
+
+        <p class="small">
+            Real registration and secure account storage must be connected
+            before this can be used by customers.
+        </p>
+
+    </div>
+
+    <div class="panel">
+        <h2>🎁 Planned Free Trial</h2>
+        <p>New members will be offered a 10-day free trial once the real
+        membership system has been built.</p>
+        <p>Before registration, customers must be told clearly if they
+        need to provide a payment method and whether payment will renew
+        automatically after the trial.</p>
+    </div>
+
+</section>
 
 </main>
 
+
+<!-- FLUFFY BUNNY HELPER -->
+
+<div class="bunny-helper">
+
+    <div class="bunny-chat" id="bunnyChat">
+
+        <h3>🐰 Hello! I'm Fluffy!</h3>
+
+        <p id="bunnyMessage">
+            Welcome to Zumar Wonderland! Where would you like to go?
+        </p>
+
+        <div class="bunny-options">
+            <button onclick="bunnyGo('home')">🏡 Go Home</button>
+            <button onclick="bunnyGo('pets')">🐾 Meet the Pets</button>
+            <button onclick="bunnyGo('learn')">📚 Find Learning</button>
+            <button onclick="bunnyGo('games')">🎮 Play Games</button>
+            <button onclick="bunnyGo('membership')">💎 Membership</button>
+            <button onclick="bunnyGo('account')">🎁 Free Trial Preview</button>
+        </div>
+
+        <button class="action secondary" onclick="toggleBunny()">
+            Bye, Fluffy!
+        </button>
+
+    </div>
+
+    <button class="bunny-button" onclick="toggleBunny()"
+        aria-label="Open Fluffy Bunny Helper" title="Ask Fluffy for help">
+        🐰
+    </button>
+
+</div>
+
+
 <footer>
-    <h2>✨ Zumar Wonderland ✨</h2>
-    <p>Dream big. Learn lots. Imagine everything!</p>
-    <p>Made with 💖 for curious minds.</p>
+    <h3>🌈 Zumar Wonderland</h3>
+    <p>A little world full of learning, imagination, and fluffy friends.</p>
+    <p class="small">Made with 💗 for curious explorers.</p>
 </footer>
 
+
 <script>
-function welcome() {
-    alert("Welcome to Zumar Wonderland! 🌈");
-}
 
-function startAdventure() {
-    document.getElementById("welcomeMessage").textContent =
-        "Your adventure begins now! Explore the pets and activities below! 🎉";
+// NAVIGATION
 
-    document.getElementById("pets").scrollIntoView({
-        behavior: "smooth"
+function showPage(pageName) {
+    document.querySelectorAll(".page").forEach(page => {
+        page.classList.remove("active");
     });
+
+    const selectedPage = document.getElementById(pageName);
+
+    if (selectedPage) {
+        selectedPage.classList.add("active");
+    }
+
+    document.querySelectorAll("nav button").forEach(button => {
+        button.classList.toggle(
+            "active",
+            button.dataset.page === pageName
+        );
+    });
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    const messages = {
+        home: "Welcome home! Let's explore together!",
+        pets: "Let's find your perfect fluffy friend!",
+        learn: "Learning can be magical!",
+        games: "Let's play a game!",
+        membership: "Here you can preview the membership plans.",
+        account: "Let's preview the registration page!"
+    };
+
+    document.getElementById("bunnyMessage").textContent =
+        messages[pageName] || "How can I help you?";
 }
 
-function choosePet(name) {
-    document.getElementById("petMessage").textContent =
-        "Yay! " + name + " is your wonder friend! 💖";
+document.querySelectorAll("nav button").forEach(button => {
+    button.addEventListener("click", () => {
+        showPage(button.dataset.page);
+    });
+});
+
+
+// PET CHOICES
+
+const pets = [
+    { name: "Foxy", emoji: "🦊", type: "Fluffy Fox",
+      description: "A curious fox who loves adventures." },
+
+    { name: "Mochi", emoji: "🐰", type: "Fluffy Bunny",
+      description: "A gentle bunny who loves helping friends." },
+
+    { name: "Nova", emoji: "🐱", type: "Starry Cat",
+      description: "A magical cat who loves exploring." },
+
+    { name: "Bubbles", emoji: "🐶", type: "Happy Puppy",
+      description: "A playful puppy who loves making friends." },
+
+    { name: "Coco", emoji: "🐈", type: "Cosy Kitten",
+      description: "A cuddly kitten who enjoys quiet moments." },
+
+    { name: "Snowball", emoji: "🐇", type: "Snow Bunny",
+      description: "A soft bunny who loves snowy adventures." },
+
+    { name: "Pumpkin", emoji: "🐈‍⬛", type: "Midnight Cat",
+      description: "A mysterious cat who loves moonlight." },
+
+    { name: "Peaches", emoji: "🐱", type: "Peachy Kitten",
+      description: "A cheerful kitten who loves sunny days." },
+
+    { name: "Sunny", emoji: "🐥", type: "Little Chick",
+      description: "A tiny chick who loves discovering things." },
+
+    { name: "Daisy", emoji: "🦋", type: "Magic Butterfly",
+      description: "A colourful butterfly who loves flowers." },
+
+    { name: "Pudding", emoji: "🐹", type: "Tiny Hamster",
+      description: "A little hamster who loves snacks and naps." },
+
+    { name: "Cloud", emoji: "🦄", type: "Dream Unicorn",
+      description: "A dreamy unicorn full of imagination." }
+];
+
+let selectedPet = null;
+
+function renderPets() {
+    const grid = document.getElementById("petGrid");
+
+    grid.innerHTML = pets.map((pet, index) => `
+        <div class="card">
+            <span class="pet-emoji">${pet.emoji}</span>
+            <h3>${pet.name}</h3>
+            <span class="pill">${pet.type}</span>
+            <p>${pet.description}</p>
+            <button class="action secondary"
+                onclick="choosePet(${index})">
+                Choose ${pet.name}
+            </button>
+        </div>
+    `).join("");
 }
 
-const surprisePets = ["🐰 Bunny", "🐱 Sparkle Cat", "🦄 Baby Unicorn", "🐢 Tiny Turtle"];
+function choosePet(index) {
+    selectedPet = pets[index];
 
-function hatchPet() {
-    const randomPet = surprisePets[
-        Math.floor(Math.random() * surprisePets.length)
-    ];
+    document.getElementById("chosenPet").textContent =
+        selectedPet.emoji + " " + selectedPet.name +
+        " is your favourite pet! " + selectedPet.description;
 
-    document.getElementById("eggMessage").textContent =
-        "POP! You hatched " + randomPet + "! 🎉";
+    document.getElementById("bunnyMessage").textContent =
+        "Great choice! " + selectedPet.name +
+        " sounds like a lovely friend!";
+
+    document.getElementById("bunnyChat").classList.add("open");
 }
 
-function openLesson(subject) {
-    document.getElementById("lessonMessage").textContent =
-        "Welcome to " + subject + "! Your learning adventure is coming soon! ✨";
+function openEgg() {
+    const pet = pets[Math.floor(Math.random() * pets.length)];
+
+    document.getElementById("eggResult").textContent =
+        "🎉 Surprise! You discovered " + pet.emoji + " " +
+        pet.name + ", the " + pet.type + "!";
+
+    document.getElementById("bunnyMessage").textContent =
+        "Wow! The mystery egg revealed " + pet.name + "!";
 }
 
-function guessNumber() {
-    const input = document.getElementById("numberGuess");
+renderPets();
+
+
+// LEARNING SUBJECTS
+
+function chooseSubject(subject) {
+    document.getElementById("subjectResult").textContent =
+        "🌟 You chose " + subject +
+        "! More activities for this subject can be added next.";
+
+    document.getElementById("bunnyMessage").textContent =
+        "Wonderful choice! Let's explore " + subject + " together!";
+}
+
+
+// NUMBER GUESSING GAME
+
+let secretNumber = Math.floor(Math.random() * 10) + 1;
+
+function checkGuess() {
+    const input = document.getElementById("guessInput");
+    const result = document.getElementById("guessResult");
     const guess = Number(input.value);
-    const answer = Math.floor(Math.random() * 5) + 1;
-    const message = document.getElementById("gameMessage");
 
-    if (input.value === "" || guess < 1 || guess > 5 || !Number.isInteger(guess)) {
-        message.textContent = "Please enter a whole number from 1 to 5.";
+    if (input.value.trim() === "" || guess < 1 || guess > 10 ||
+        !Number.isInteger(guess)) {
+        result.textContent = "Please enter a whole number from 1 to 10.";
         return;
     }
 
-    if (guess === answer) {
-        message.textContent = "Amazing! You guessed it! ⭐ The number was " + answer + "!";
+    if (guess === secretNumber) {
+        result.textContent = "🎉 Correct! You guessed the number!";
+    } else if (guess < secretNumber) {
+        result.textContent = "⬆️ Try a higher number!";
     } else {
-        message.textContent = "Good try! The magic number was " + answer + ". Try again! 🌈";
+        result.textContent = "⬇️ Try a lower number!";
     }
 }
+
+function resetGuess() {
+    secretNumber = Math.floor(Math.random() * 10) + 1;
+    document.getElementById("guessInput").value = "";
+    document.getElementById("guessResult").textContent =
+        "New number ready! Try again!";
+}
+
+
+// QUICK QUIZ
+
+function answerQuiz(answer) {
+    const result = document.getElementById("quizResult");
+
+    if (answer === "Cat") {
+        result.textContent = "🎉 Correct! Cats say meow!";
+    } else {
+        result.textContent = "🐰 Not quite! Try again. Which animal says meow?";
+    }
+}
+
+
+// FLUFFY BUNNY HELPER
+
+function toggleBunny() {
+    document.getElementById("bunnyChat").classList.toggle("open");
+}
+
+function bunnyGo(pageName) {
+    showPage(pageName);
+
+    document.getElementById("bunnyChat").classList.add("open");
+}
+
+
+// REGISTRATION DEMONSTRATION ONLY
+// This does NOT create an account or start a real free trial.
+// Never store real passwords in a public HTML file.
+
+function previewTrial() {
+    const email = document.getElementById("demoEmail").value.trim();
+    const password = document.getElementById("demoPassword").value;
+
+    const result = document.getElementById("accountResult");
+
+    if (!email || !email.includes("@")) {
+        result.textContent = "Please enter a pretend email address for the demo.";
+        return;
+    }
+
+    if (password.length < 4) {
+        result.textContent = "Enter a pretend password with at least 4 characters.";
+        return;
+    }
+
+    // Clear the password field immediately.
+    document.getElementById("demoPassword").value = "";
+
+    result.textContent =
+        "🎁 Demo complete! A real account and 10-day trial are not connected yet. " +
+        "No account has been created and no information has been saved.";
+
+    document.getElementById("bunnyMessage").textContent =
+        "Lovely! Your registration preview is finished. A grown-up can help connect real accounts later.";
+}
+
 </script>
 
 </body>
