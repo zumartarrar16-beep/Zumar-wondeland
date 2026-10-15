@@ -1,9 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Zumar Wonderland 🌈</title>
 
 <style>
@@ -13,128 +13,277 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fff5fb;
-  color: #423650;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  background: #fffaf2;
+  color: #39304c;
 }
 
 header {
-  text-align: center;
-  padding: 30px 15px;
-  background: linear-gradient(135deg, #f9c9e5, #d8d0ff, #c9f3ed);
-  border-radius: 0 0 30px 30px;
+  background: white;
+  padding: 18px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  box-shadow: 0 3px 15px #00000008;
 }
 
-header h1 {
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  margin: 0;
-}
-
-header p {
-  font-size: 1.1rem;
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: #7651c9;
 }
 
 nav {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 8px;
-  padding: 15px;
-  background: white;
-  position: sticky;
-  top: 0;
-  z-index: 10;
 }
 
-button {
-  border: none;
-  border-radius: 14px;
-  padding: 12px 16px;
-  background: #eadfff;
-  color: #423650;
-  font-size: 1rem;
+nav a {
+  text-decoration: none;
+  color: #493c61;
+  padding: 10px 13px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  background: #f0e7ff;
+}
+
+.hero {
+  width: 92%;
+  max-width: 1200px;
+  margin: 25px auto;
+  padding: 35px;
+  border-radius: 32px;
+  background: linear-gradient(120deg, #e9dcff, #ffe6ed, #fff0c9);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 240px;
+}
+
+.eyebrow {
+  color: #7651c9;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 6vw, 66px);
+  line-height: 1.08;
+  margin: 12px 0;
+  color: #6844b0;
+}
+
+.hero p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.primary-button {
+  border: 0;
+  border-radius: 25px;
+  padding: 15px 24px;
+  background: #7651c9;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
 }
 
-button:hover {
-  background: #d8c5ff;
+.primary-button:hover {
+  background: #5837a5;
 }
 
-nav button.active {
-  background: #bca5ff;
+.hero-friends {
+  flex: 1;
+  min-width: 230px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-main {
-  max-width: 1100px;
-  margin: auto;
-  padding: 18px;
+.friend {
+  width: 125px;
+  height: 145px;
+  border-radius: 65px 65px 35px 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 0 #0000000a;
+  animation: float 2.5s ease-in-out infinite;
 }
 
-section {
-  display: none;
+.friend:nth-child(2) {
+  animation-delay: .4s;
+  transform: translateY(-15px);
 }
 
-#home {
-  display: block;
+.friend:nth-child(3) {
+  animation-delay: .8s;
 }
 
-.card {
-  background: white;
-  border-radius: 22px;
-  padding: 22px;
-  margin: 15px 0;
-  box-shadow: 0 4px 15px #d9cce533;
+.friend .face {
+  font-size: 65px;
+  line-height: 1.3;
 }
 
-.grid {
+.friend span:last-child {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.panda {
+  background: #ffffff;
+}
+
+.unicorn {
+  background: #f5dcff;
+}
+
+.fox {
+  background: #ffe0b8;
+}
+
+@keyframes float {
+  0%, 100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -12px;
+  }
+}
+
+.section {
+  width: 92%;
+  max-width: 1200px;
+  margin: 55px auto;
+}
+
+.section h2 {
+  font-size: clamp(27px, 4vw, 36px);
+  margin-bottom: 8px;
+}
+
+.section-intro {
+  color: #746981;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.activity-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
+  gap: 20px;
+  margin-top: 25px;
 }
 
-.big-emoji {
-  font-size: 3rem;
+.activity-card {
+  padding: 22px;
+  border-radius: 25px;
+  background: white;
+  box-shadow: 0 5px 20px #45305b0d;
+  text-align: center;
+  transition: transform .2s;
 }
 
-input, select {
-  width: 100%;
-  max-width: 400px;
-  padding: 12px;
-  margin: 8px 0;
-  border: 2px solid #e1d5f5;
-  border-radius: 12px;
-  font-size: 1rem;
+.activity-card:hover {
+  transform: translateY(-5px);
 }
 
-#toast {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #423650;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 15px;
-  display: none;
-  z-index: 100;
+.activity-picture {
+  min-height: 145px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 85px;
+}
+
+.picture-pink {
+  background: #ffe8f0;
+}
+
+.picture-blue {
+  background: #e3f4ff;
+}
+
+.picture-yellow {
+  background: #fff3cb;
+}
+
+.picture-green {
+  background: #e3f7e9;
+}
+
+.activity-card h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.activity-card p {
+  line-height: 1.6;
+  color: #746981;
 }
 
 footer {
   text-align: center;
-  padding: 25px;
+  padding: 30px 15px;
+  background: white;
+  margin-top: 60px;
 }
 
 @media (max-width: 600px) {
+  header {
+    justify-content: center;
+  }
+
+  .logo {
+    text-align: center;
+  }
+
   nav {
-    position: static;
+    justify-content: center;
   }
 
-  main {
-    padding: 10px;
+  .hero {
+    padding: 23px;
   }
 
-  .card {
-    padding: 16px;
+  .friend {
+    width: 95px;
+    height: 125px;
+  }
+
+  .friend .face {
+    font-size: 52px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .friend {
+    animation: none;
+  }
+
+  .activity-card {
+    transition: none;
   }
 }
 </style>
@@ -143,805 +292,262 @@ footer {
 <body>
 
 <header>
-  <h1>🌈 Zumar Wonderland 🏡</h1>
-  <p>A magical world to explore, learn, play and create!</p>
-  <h3>⭐ My Stars: <span id="starCount">0</span></h3>
-  <h3>🏆 Level: <span id="playerLevel">1</span></h3>
-</header>
+  <div class="logo">🌈 Zumar Wonderland</div>
 
-<nav>
-  <button class="active" onclick="showPage('home', this)">🏡 Home</button>
-  <button onclick="showPage('world', this)">🌍 World</button>
-  <button onclick="showPage('places', this)">✈️ Places</button>
-  <button onclick="showPage('pets', this)">🐾 Pets</button>
-  <button onclick="showPage('games', this)">🎮 Games</button>
-  <button onclick="showPage('learn', this)">📚 Learn</button>
-  <button onclick="showPage('myworld', this)">🎨 My World</button>
-  <button onclick="showPage('space', this)">🚀 Space</button>
-</nav>
+  <nav>
+    <a href="#home">Home 🏡</a>
+    <a href="#friends">Characters 🐼</a>
+    <a href="#learn">Learn 📚</a>
+    <a href="#games">Games 🎮</a>
+  </nav>
+</header>
 
 <main>
 
-<section id="home">
-  <div class="card">
-    <h2>Welcome to your wonderland! ✨</h2>
-    <p>Explore countries, discover beautiful places, care for cute pets, play games and learn something new.</p>
-    <div class="grid">
-      <div class="card">
-        <div class="big-emoji">🌍</div>
-        <h3>Explore the World</h3>
-        <p>Discover countries and their capitals.</p>
-        <button onclick="showPage('world')">Start exploring</button>
-      </div>
-      <div class="card">
-        <div class="big-emoji">🐰</div>
-        <h3>Meet Your Pet</h3>
-        <p>Adopt an adorable virtual friend.</p>
-        <button onclick="showPage('pets')">Meet pets</button>
-      </div>
-      <div class="card">
-        <div class="big-emoji">🎮</div>
-        <h3>Play Games</h3>
-        <p>Have fun and collect stars.</p>
-        <button onclick="showPage('games')">Play now</button>
-      </div>
-      <div class="card">
-        <div class="big-emoji">📚</div>
-        <h3>Learning Corner</h3>
-        <p>Try fun quizzes and challenges.</p>
-        <button onclick="showPage('learn')">Start learning</button>
-      </div>
-    </div>
+<section class="hero" id="home">
+
+  <div class="hero-text">
+    <p class="eyebrow">✨ YOUR ADVENTURE STARTS HERE!</p>
+
+    <h1>Let's Play & Learn!</h1>
+
+    <p>
+      Welcome to Zumar Wonderland!
+      Meet adorable friends, discover exciting activities,
+      and make every day a wonderful adventure.
+    </p>
+
+    <a class="primary-button" href="#friends">
+      Meet Your Friends! 💗
+    </a>
   </div>
 
-  <div class="card">
-    <h2>🌟 Your Daily Mission</h2>
-    <p>Explore a country, answer a quiz question, or take care of your pet to earn stars!</p>
+  <div class="hero-friends">
+
+    <div class="friend panda">
+      <span class="face">🐼</span>
+      <span>Pip</span>
+    </div>
+
+    <div class="friend unicorn">
+      <span class="face">🦄</span>
+      <span>Twinkle</span>
+    </div>
+
+    <div class="friend fox">
+      <span class="face">🦊</span>
+      <span>Foxy</span>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section" id="friends">
+  <h2>Meet Your Wonderland Friends! 🥰</h2>
+
+  <p class="section-intro">
+    Your new friends are ready to explore with you!
+  </p>
+
+  <div class="activity-grid">
+
+    <div class="activity-card">
+      <div class="activity-picture picture-pink">🐼</div>
+      <h3>Pip the Panda</h3>
+      <p>A curious little panda who loves discovering new things.</p>
+    </div>
+
+    <div class="activity-card">
+      <div class="activity-picture picture-blue">🦄</div>
+      <h3>Twinkle the Unicorn</h3>
+      <p>A magical friend who loves colours, creativity, and imagination.</p>
+    </div>
+
+    <div class="activity-card">
+      <div class="activity-picture picture-yellow">🦊</div>
+      <h3>Foxy the Explorer</h3>
+      <p>A playful fox who is always ready for a new adventure.</p>
+    </div>
+
   </div>
 </section>
 
 <!-- PART 2 WILL GO HERE -->
-```
-```html
-<section id="world">
-  <div class="card">
-    <h2>🌍 Explore Our Beautiful World</h2>
-    <p>Search for a country or its capital!</p>
-    <input id="countrySearch" placeholder="Try Oman, Japan, Paris...">
-    <button onclick="searchCountry()">🔎 Search</button>
-    <button onclick="resetMap()">🌎 Reset map</button>
-    <div id="map" style="height:400px;border-radius:18px;margin-top:15px;background:#e3f7ff;"></div>
-    <div id="countryInfo" class="card">
-      🌍 Choose a country to start exploring!
+<section class="section" id="learn">
+  <h2>📚 Let's Learn Together!</h2>
+  <p class="section-intro">
+    Choose an activity and learn with your Wonderland friends.
+  </p>
+
+  <div class="activity-grid">
+
+    <div class="activity-card">
+      <div class="activity-picture picture-pink">🔤</div>
+      <h3>Letter Adventure</h3>
+      <p>Discover letters and learn their sounds.</p>
+      <button class="primary-button" onclick="startLetters()">Play Now!</button>
     </div>
-    <h3>Popular countries</h3>
-    <div id="popular"></div>
+
+    <div class="activity-card">
+      <div class="activity-picture picture-blue">🔢</div>
+      <h3>Number Fun</h3>
+      <p>Practise counting with Pip the Panda.</p>
+      <button class="primary-button" onclick="startNumbers()">Play Now!</button>
+    </div>
+
+    <div class="activity-card">
+      <div class="activity-picture picture-yellow">🎨</div>
+      <h3>Colour Challenge</h3>
+      <p>Learn colours with Twinkle the Unicorn.</p>
+      <button class="primary-button" onclick="startColours()">Play Now!</button>
+    </div>
+
   </div>
 </section>
 
-<section id="places">
-  <div class="card">
-    <h2>✈️ Amazing Places to Visit</h2>
-    <p>Explore beautiful places around the world!</p>
-    <div id="placesGrid" class="grid"></div>
+<section class="section" id="games">
+  <h2>🎮 Wonderland Games!</h2>
+  <p class="section-intro">
+    Play a game, answer questions, and collect stars!
+  </p>
+
+  <div class="activity-card">
+    <div class="activity-picture picture-green">⭐</div>
+    <h3 id="gameTitle">The Magic Number Game</h3>
+    <p id="gameQuestion">Can you guess the secret number?</p>
+
+    <div id="gameChoices" class="activity-grid"></div>
+
+    <p id="gameFeedback" aria-live="polite">
+      Choose a number from 1 to 5 to begin!
+    </p>
+
+    <p>⭐ Stars collected: <strong id="starCount">0</strong></p>
+
+    <button class="primary-button" onclick="startNumberGame()">
+      Start Number Game
+    </button>
   </div>
 </section>
 
-<section id="pets">
-  <div class="card">
-    <h2>🐾 Adopt Your Dream Pet</h2>
-    <p>Choose a pet to become your new best friend!</p>
-    <div id="petChoices" class="grid"></div>
-    <div id="myPet" class="card">
-      🥚 Your mystery egg is waiting!
-    </div>
-    <button onclick="hatchEgg()">🥚 Hatch mystery egg</button>
-    <button onclick="carePet('feed')">🍎 Feed</button>
-    <button onclick="carePet('play')">🎾 Play</button>
-    <button onclick="carePet('rest')">😴 Rest</button>
-  </div>
-</section>
-
-<section id="games">
-  <div class="card">
-    <h2>🎮 Wonderland Games</h2>
-
-    <div class="card">
-      <h3>🎲 Lucky Dice</h3>
-      <p>Roll the dice and collect a star!</p>
-      <button onclick="rollDice()">Roll dice</button>
-      <p id="diceResult">Ready to roll?</p>
-    </div>
-
-    <div class="card">
-      <h3>🔢 Guess the Number</h3>
-      <p>I'm thinking of a number between 1 and 10.</p>
-      <input id="guessInput" type="number" min="1" max="10" placeholder="Your guess">
-      <button onclick="guessNumber()">Guess</button>
-      <p id="guessResult"></p>
-    </div>
-
-    <div class="card">
-      <h3>🎁 Mystery Treasure Chest</h3>
-      <p>Open your chest to discover a surprise!</p>
-      <button onclick="openChest()">Open chest</button>
-      <p id="chestResult"></p>
-    </div>
-  </div>
-</section>
-
-<section id="learn">
-  <div class="card">
-    <h2>📚 Learning Wonderland</h2>
-    <p>Choose a subject and answer the questions!</p>
-    <div id="subjects"></div>
-    <div id="quizCard" class="card"></div>
-  </div>
-</section>
-
-<section id="myworld">
-  <div class="card">
-    <h2>🏡 Build Your Own World</h2>
-    <p>Choose a theme for your wonderland!</p>
-
-    <button onclick="setTheme('ocean')">🌊 Ocean</button>
-    <button onclick="setTheme('sunset')">🌅 Sunset</button>
-    <button onclick="setTheme('forest')">🌳 Forest</button>
-    <button onclick="setTheme('lavender')">💜 Lavender</button>
-
-    <h3>🎨 Decorate Your Room</h3>
-    <button onclick="decorate('🛏️')">🛏️ Bed</button>
-    <button onclick="decorate('🪴')">🪴 Plant</button>
-    <button onclick="decorate('🪟')">🪟 Window</button>
-    <button onclick="decorate('⭐')">⭐ Stars</button>
-    <button onclick="decorate('🦋')">🦋 Butterflies</button>
-
-    <div id="roomDecorations" class="card">
-      Your room is waiting for decorations!
-    </div>
-
-    <h3>😊 Choose Your Avatar</h3>
-    <div id="myAvatar">🧕</div>
-    <button onclick="changeAvatar('🧕')">🧕 Avatar 1</button>
-    <button onclick="changeAvatar('👩🏻‍🎨')">👩🏻‍🎨 Avatar 2</button>
-    <button onclick="changeAvatar('🧑🏻‍🚀')">🧑🏻‍🚀 Avatar 3</button>
-    <button onclick="changeAvatar('🧙🏻‍♀️')">🧙🏻‍♀️ Avatar 4</button>
-  </div>
-</section>
-
-<section id="space">
-  <div class="card">
-    <h2>🚀 Space Explorer</h2>
-    <p>Discover the planets in our Solar System!</p>
-    <div id="planets" class="grid"></div>
-    <div id="spaceMission" class="card">
-      Choose a planet to discover a space fact!
-    </div>
-    <button onclick="launchRocket()">🚀 Launch rocket</button>
+<section class="section" id="reward">
+  <div class="activity-card">
+    <div class="activity-picture picture-pink">🏆</div>
+    <h2>Your Wonderland Rewards!</h2>
+    <p>Keep learning and playing to earn stars.</p>
+    <p>🌟 Total stars: <strong id="rewardCount">0</strong></p>
+    <button class="primary-button" onclick="resetStars()">
+      Start a Fresh Challenge
+    </button>
   </div>
 </section>
 
 <footer>
-  <p>🌈 Zumar Wonderland — Dream, Discover, Create! ⭐</p>
-  <p>Made with imagination and love 💗</p>
+  <h3>🌈 Zumar Wonderland</h3>
+  <p>Learn, play, imagine, and shine! ✨</p>
+  <p>Made with 💗 by Zumar</p>
 </footer>
 
-<div id="toast"></div>
-
-<!-- PART 3 WILL GO HERE -->
-```
-```html
 <script>
-let stars = Number(localStorage.getItem("zwStars") || 0);
-let selectedPet = localStorage.getItem("zwPet") || "";
-let petMood = localStorage.getItem("zwPetMood") || "Happy";
-let currentAvatar = localStorage.getItem("zwAvatar") || "🧕";
-let currentTheme = localStorage.getItem("zwTheme") || "default";
-let decorations = JSON.parse(localStorage.getItem("zwDecorations") || "[]");
-let secretNumber = Math.floor(Math.random() * 10) + 1;
-
-function saveProgress() {
-  localStorage.setItem("zwStars", stars);
-  localStorage.setItem("zwPet", selectedPet);
-  localStorage.setItem("zwPetMood", petMood);
-  localStorage.setItem("zwAvatar", currentAvatar);
-  localStorage.setItem("zwTheme", currentTheme);
-  localStorage.setItem("zwDecorations", JSON.stringify(decorations));
-  updateStars();
-}
+let stars = 0;
+let secretNumber = 1;
+let answered = false;
 
 function updateStars() {
   document.getElementById("starCount").textContent = stars;
-  document.getElementById("playerLevel").textContent =
-    Math.floor(stars / 20) + 1;
+  document.getElementById("rewardCount").textContent = stars;
 }
 
-function earnStars(amount = 1) {
-  stars += amount;
-  saveProgress();
-  showToast("⭐ You earned " + amount + " star(s)!");
-}
-
-function showToast(message) {
-  const toast = document.getElementById("toast");
-  if (!toast) return;
-
-  toast.textContent = message;
-  toast.style.display = "block";
-
-  clearTimeout(window.toastTimer);
-  window.toastTimer = setTimeout(() => {
-    toast.style.display = "none";
-  }, 2500);
-}
-
-/* NAVIGATION */
-
-function showPage(pageId, button) {
-  document.querySelectorAll("main section").forEach(section => {
-    section.style.display = "none";
-  });
-
-  const page = document.getElementById(pageId);
-  if (page) page.style.display = "block";
-
-  document.querySelectorAll("nav button").forEach(btn => {
-    btn.classList.remove("active");
-  });
-
-  if (button) button.classList.add("active");
-
-  window.scrollTo({ top: 0, behavior: "smooth" });
-
-  setTimeout(() => {
-    if (window.wonderMap) window.wonderMap.invalidateSize();
-  }, 200);
-}
-
-/* WORLD EXPLORER */
-
-const countries = [
-  ["Oman","Muscat","🇴🇲","Asia"],
-  ["Pakistan","Islamabad","🇵🇰","Asia"],
-  ["India","New Delhi","🇮🇳","Asia"],
-  ["Japan","Tokyo","🇯🇵","Asia"],
-  ["China","Beijing","🇨🇳","Asia"],
-  ["Saudi Arabia","Riyadh","🇸🇦","Asia"],
-  ["United Arab Emirates","Abu Dhabi","🇦🇪","Asia"],
-  ["Qatar","Doha","🇶🇦","Asia"],
-  ["France","Paris","🇫🇷","Europe"],
-  ["Italy","Rome","🇮🇹","Europe"],
-  ["Switzerland","Bern","🇨🇭","Europe"],
-  ["Germany","Berlin","🇩🇪","Europe"],
-  ["Portugal","Lisbon","🇵🇹","Europe"],
-  ["Spain","Madrid","🇪🇸","Europe"],
-  ["United Kingdom","London","🇬🇧","Europe"],
-  ["United States","Washington, D.C.","🇺🇸","North America"],
-  ["Canada","Ottawa","🇨🇦","North America"],
-  ["Brazil","Brasília","🇧🇷","South America"],
-  ["Australia","Canberra","🇦🇺","Oceania"],
-  ["New Zealand","Wellington","🇳🇿","Oceania"],
-  ["Egypt","Cairo","🇪🇬","Africa"],
-  ["South Africa","Pretoria","🇿🇦","Africa"],
-  ["Kenya","Nairobi","🇰🇪","Africa"]
-];
-
-function buildPopularCountries() {
-  const container = document.getElementById("popular");
-  if (!container) return;
-
-  container.innerHTML = countries.slice(0, 12).map(c =>
-    '<button onclick="showCountry(' + JSON.stringify(c[0]) + ')">' +
-    c[2] + " " + c[0] + "</button>"
-  ).join(" ");
-}
-
-function searchCountry() {
-  const input = document.getElementById("countrySearch");
-  const info = document.getElementById("countryInfo");
-  const query = input.value.trim().toLowerCase();
-
-  const country = countries.find(c =>
-    c[0].toLowerCase() === query ||
-    c[1].toLowerCase() === query
-  );
-
-  if (!country) {
-    info.innerHTML =
-      "🔎 Try a country or capital from the popular list.";
-    return;
-  }
-
-  info.innerHTML =
-    "<h2>" + country[2] + " " + country[0] + "</h2>" +
-    "<p>🏛️ Capital: " + country[1] + "</p>" +
-    "<p>🌍 Continent: " + country[3] + "</p>";
-
-  earnStars(1);
-}
-
-function showCountry(name) {
-  document.getElementById("countrySearch").value = name;
-  searchCountry();
-}
-
-function resetMap() {
-  document.getElementById("countrySearch").value = "";
-  document.getElementById("countryInfo").innerHTML =
-    "🌍 Choose a country to start exploring!";
-  if (window.wonderMap) window.wonderMap.setView([20, 0], 2);
-}
-
-/* INTERACTIVE WORLD MAP */
-
-function loadMapLibrary() {
-  const css = document.createElement("link");
-  css.rel = "stylesheet";
-  css.href = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
-  document.head.appendChild(css);
-
-  const script = document.createElement("script");
-  script.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
-  script.onload = initWonderMap;
-  script.onerror = () => {
-    document.getElementById("map").textContent =
-      "The map could not load. Please check your internet connection.";
-  };
-  document.head.appendChild(script);
-}
-
-function initWonderMap() {
-  const mapElement = document.getElementById("map");
-  if (!mapElement || !window.L) return;
-
-  window.wonderMap = L.map("map").setView([20, 0], 2);
-
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution: '&copy; OpenStreetMap contributors'
-  }).addTo(window.wonderMap);
-
-  fetch("https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson")
-    .then(response => response.json())
-    .then(data => {
-      L.geoJSON(data, {
-        style: {
-          color: "#8b70b5",
-          weight: 1,
-          fillColor: "#c9b8f0",
-          fillOpacity: 0.18
-        },
-        onEachFeature: (feature, layer) => {
-          const properties = feature.properties || {};
-          const name =
-            properties.ADMIN || properties.name || properties.NAME || "Country";
-          layer.bindPopup("🌍 " + name);
-        }
-      }).addTo(window.wonderMap);
-    })
-    .catch(() => showToast("Country borders could not load."));
-}
-
-/* PLACES */
-
-const places = [
-  ["Paris, France","🗼","See the Eiffel Tower.","France"],
-  ["London, England","🎡","Discover famous landmarks.","United Kingdom"],
-  ["Swiss Alps","🏔️","Explore snowy mountains.","Switzerland"],
-  ["Rome, Italy","🏛️","Discover ancient history.","Italy"],
-  ["Tokyo, Japan","🌸","Explore technology and gardens.","Japan"],
-  ["Dubai, UAE","🏙️","See amazing modern buildings.","United Arab Emirates"],
-  ["Muscat, Oman","🕌","Enjoy mountains and beaches.","Oman"],
-  ["Sydney, Australia","🌊","Visit the famous Opera House.","Australia"],
-  ["Islamabad, Pakistan","🌳","Discover beautiful green hills.","Pakistan"],
-  ["New York, USA","🗽","Explore skyscrapers and parks.","United States"],
-  ["Lisbon, Portugal","🚋","Enjoy colourful streets.","Portugal"],
-  ["Cairo, Egypt","🐪","Discover the pyramids.","Egypt"]
-];
-
-function buildPlaces() {
-  const grid = document.getElementById("placesGrid");
-  if (!grid) return;
-
-  grid.innerHTML = places.map(p =>
-    '<div class="card"><div class="big-emoji">' + p[1] + "</div>" +
-    "<h3>" + p[0] + "</h3><p>" + p[2] + "</p>" +
-    '<button onclick="visitPlace(' + JSON.stringify(p[3]) +
-    ')">Explore country 🌍</button></div>'
-  ).join("");
-}
-
-function visitPlace(country) {
-  showPage("world");
-  showCountry(country);
-}
-
-/* PETS */
-
-const pets = [
-  ["Bunny","🐰"],
-  ["Kitten","🐱"],
-  ["Puppy","🐶"],
-  ["Fox","🦊"],
-  ["Panda","🐼"],
-  ["Baby Dragon","🐉"]
-];
-
-function buildPets() {
-  const grid = document.getElementById("petChoices");
-  if (!grid) return;
-
-  grid.innerHTML = pets.map(p =>
-    '<button onclick="adoptPet(' + JSON.stringify(p[0]) + ')">' +
-    p[1] + "<br>" + p[0] + "</button>"
-  ).join("");
-
-  updatePet();
-}
-
-function adoptPet(name) {
-  selectedPet = name;
-  petMood = "Happy";
-  saveProgress();
-  updatePet();
-  earnStars(2);
-  showToast("💕 You adopted " + name + "!");
-}
-
-function updatePet() {
-  const area = document.getElementById("myPet");
-  if (!area) return;
-
-  const pet = pets.find(p => p[0] === selectedPet);
-
-  if (!pet) {
-    area.innerHTML = "<h3>🥚 A mystery egg is waiting!</h3>";
-  } else {
-    area.innerHTML =
-      '<div class="big-emoji">' + pet[1] + "</div>" +
-      "<h3>Your " + pet[0] + "</h3><p>Mood: " + petMood + "</p>";
-  }
-}
-
-function carePet(action) {
-  if (!selectedPet) {
-    showToast("Choose or hatch a pet first! 🥚");
-    return;
-  }
-
-  const moods = {
-    feed: "Full and happy 😋",
-    play: "Excited and playful 🎾",
-    rest: "Cosy and sleepy 😴"
-  };
-
-  petMood = moods[action];
-  saveProgress();
-  updatePet();
-  earnStars(1);
-}
-
-function hatchEgg() {
-  if (!selectedPet) {
-    const pet = pets[Math.floor(Math.random() * pets.length)];
-    adoptPet(pet[0]);
-    showToast("🥚✨ Surprise! A pet hatched!");
-  } else {
-    showToast("Your egg has already hatched! 💗");
-  }
-}
-
-/* GAMES */
-
-function rollDice() {
-  const number = Math.floor(Math.random() * 6) + 1;
-  document.getElementById("diceResult").textContent =
-    "🎲 You rolled " + number + "!";
-  earnStars(1);
-}
-
-function guessNumber() {
-  const input = document.getElementById("guessInput");
-  const output = document.getElementById("guessResult");
-  const guess = Number(input.value);
-
-  if (!Number.isInteger(guess) || guess < 1 || guess > 10) {
-    output.textContent = "Enter a whole number from 1 to 10.";
-    return;
-  }
-
-  if (guess === secretNumber) {
-    output.textContent = "🎉 Correct! You guessed it!";
-    earnStars(3);
-    secretNumber = Math.floor(Math.random() * 10) + 1;
-  } else if (guess < secretNumber) {
-    output.textContent = "⬆️ Try a higher number!";
-  } else {
-    output.textContent = "⬇️ Try a lower number!";
-  }
-}
-
-function openChest() {
-  const prizes = [
-    ["⭐ You won 2 stars!", 2],
-    ["💎 You won 5 stars!", 5],
-    ["🌈 Rainbow surprise! You won 1 star!", 1],
-    ["🦄 Magical surprise! You won 3 stars!", 3]
-  ];
-
-  const prize = prizes[Math.floor(Math.random() * prizes.length)];
-  document.getElementById("chestResult").textContent = prize[0];
-  earnStars(prize[1]);
-}
-
-/* QUIZZES */
-
-const quizQuestions = {
-  "Maths": [
-    ["What is 7 × 8?", ["54","56","64"], 1],
-    ["What is half of 20?", ["5","10","15"], 1],
-    ["What is 100 − 37?", ["63","73","67"], 0]
-  ],
-  "English": [
-    ["Which is a noun?", ["Quickly","Happiness","Run"], 1],
-    ["Choose the correct spelling.", ["Beautifull","Beautiful","Beutiful"], 1],
-    ["Opposite of ancient?", ["Modern","Old","Historic"], 0]
-  ],
-  "Science": [
-    ["Which is the Red Planet?", ["Mars","Venus","Neptune"], 0],
-    ["What do plants need for photosynthesis?", ["Plastic","Sunlight","Sand only"], 1],
-    ["Which is a mammal?", ["Shark","Frog","Dolphin"], 2]
-  ],
-  "Geography": [
-    ["What is the capital of Oman?", ["Salalah","Muscat","Sohar"], 1],
-    ["Which is the largest ocean?", ["Pacific","Indian","Arctic"], 0],
-    ["Oman is in which continent?", ["Africa","Asia","Europe"], 1]
-  ],
-  "Arabic & Islamic Studies": [
-    ["What is 'book' in Arabic?", ["قلم","كتاب","باب"], 1],
-    ["How many daily prayers are there in Islam?", ["Three","Four","Five"], 2],
-    ["What is Arabic for peace?", ["سلام","ماء","شمس"], 0]
-  ],
-  "Arts & Crafts": [
-    ["Which colours make green?", ["Blue and yellow","Red and blue","Black and white"], 0],
-    ["What can scissors do?", ["Cut paper","Paint the sky","Bake bread"], 0],
-    ["Which material is used for origami?", ["Paper","Stone","Water"], 0]
-  ]
-};
-
-let activeSubject = "Maths";
-let quizIndex = 0;
-let quizScore = 0;
-let quizAnswered = false;
-
-function buildSubjects() {
-  const area = document.getElementById("subjects");
-  area.innerHTML = Object.keys(quizQuestions).map(subject =>
-    '<button onclick="chooseSubject(' + JSON.stringify(subject) + ')">' +
-    subject + "</button>"
-  ).join("");
-
-  showQuestion();
-}
-
-function chooseSubject(subject) {
-  activeSubject = subject;
-  quizIndex = 0;
-  quizScore = 0;
-  quizAnswered = false;
-  showQuestion();
-}
-
-function showQuestion() {
-  const card = document.getElementById("quizCard");
-  const questions = quizQuestions[activeSubject];
-
-  if (quizIndex >= questions.length) {
-    card.innerHTML = "<h3>🎉 Quiz complete!</h3><p>Your score: " +
-      quizScore + " out of " + questions.length + "</p>" +
-      '<button onclick="chooseSubject(' + JSON.stringify(activeSubject) +
-      ')">Play again</button>';
-    return;
-  }
-
-  const q = questions[quizIndex];
-  quizAnswered = false;
-
-  card.innerHTML = "<h3>" + activeSubject + "</h3>" +
-    "<p>Question " + (quizIndex + 1) + " of " + questions.length + "</p>" +
-    "<h3>" + q[0] + "</h3>" +
-    q[1].map((answer, index) =>
-      '<button onclick="answerQuestion(' + index + ')">' +
-      answer + "</button>"
-    ).join(" ") + '<p id="quizFeedback"></p>';
-}
-
-function answerQuestion(index) {
-  if (quizAnswered) return;
-  quizAnswered = true;
-
-  const q = quizQuestions[activeSubject][quizIndex];
-  const feedback = document.getElementById("quizFeedback");
-
-  if (index === q[2]) {
-    quizScore++;
-    feedback.textContent = "✅ Correct! Well done!";
-    earnStars(2);
-  } else {
-    feedback.textContent = "💡 Correct answer: " + q[1][q[2]];
-  }
-
-  setTimeout(() => {
-    quizIndex++;
-    showQuestion();
-  }, 1200);
-}
-
-/* CUSTOM WORLD */
-
-function setTheme(theme) {
-  currentTheme = theme;
-  document.body.dataset.theme = theme;
-  saveProgress();
-  showToast("🎨 Theme changed!");
-}
-
-function decorate(item) {
-  if (decorations.includes(item)) {
-    decorations = decorations.filter(d => d !== item);
-  } else {
-    decorations.push(item);
-    earnStars(1);
-  }
-
-  saveProgress();
-  updateDecorations();
-}
-
-function updateDecorations() {
-  const area = document.getElementById("roomDecorations");
-  if (area) {
-    area.innerHTML = decorations.length
-      ? decorations.map(d => '<span style="font-size:2rem;margin:8px">' +
-          d + "</span>").join("")
-      : "<p>Your room needs decorations! 🏡</p>";
-  }
-}
-
-function changeAvatar(avatar) {
-  currentAvatar = avatar;
-  localStorage.setItem("zwAvatar", avatar);
-  document.getElementById("myAvatar").textContent = avatar;
-  showToast("✨ Avatar changed!");
-}
-
-/* SPACE */
-
-const planets = [
-  ["Mercury","☄️","The closest planet to the Sun."],
-  ["Venus","🟡","The hottest planet in our Solar System."],
-  ["Earth","🌍","Our home planet."],
-  ["Mars","🔴","A red planet with giant volcanoes."],
-  ["Jupiter","🟠","The largest planet in our Solar System."],
-  ["Saturn","🪐","Famous for its rings."],
-  ["Uranus","🔵","An ice giant that spins on its side."],
-  ["Neptune","🌊","A distant, windy blue planet."]
-];
-
-function buildPlanets() {
-  document.getElementById("planets").innerHTML = planets.map((p, i) =>
-    '<button onclick="explorePlanet(' + i + ')">' +
-    '<span class="big-emoji">' + p[1] + "</span><br>" + p[0] + "</button>"
-  ).join("");
-}
-
-function explorePlanet(index) {
-  const p = planets[index];
-  document.getElementById("spaceMission").innerHTML =
-    "<h3>" + p[1] + " " + p[0] + "</h3><p>" + p[2] + "</p>";
-}
-
-function launchRocket() {
-  document.getElementById("spaceMission").innerHTML =
-    "<h3>🚀 3… 2… 1… BLAST OFF!</h3>" +
-    "<p>Your rocket is travelling through space!</p>";
-  earnStars(2);
-}
-
-/* START THE WEBSITE */
-
-function startWonderland() {
+function earnStar() {
+  stars++;
   updateStars();
-  buildPopularCountries();
-  buildPlaces();
-  buildPets();
-  buildSubjects();
-  buildPlanets();
-  updateDecorations();
+}
 
-  document.body.dataset.theme = currentTheme;
-  document.getElementById("myAvatar").textContent = currentAvatar;
+function showActivity(title, question, choices, correct, message) {
+  document.getElementById("gameTitle").textContent = title;
+  document.getElementById("gameQuestion").textContent = question;
+  document.getElementById("gameFeedback").textContent = message;
 
-  loadMapLibrary();
+  const area = document.getElementById("gameChoices");
+  area.innerHTML = "";
+  answered = false;
 
-  document.querySelectorAll("main section").forEach(section => {
-    section.style.display = "none";
+  choices.forEach(function(choice) {
+    const button = document.createElement("button");
+    button.className = "primary-button";
+    button.textContent = choice;
+
+    button.onclick = function() {
+      if (answered) return;
+      answered = true;
+
+      if (choice === correct) {
+        document.getElementById("gameFeedback").textContent =
+          "🎉 Fantastic! You got it right! You earned a star!";
+        earnStar();
+      } else {
+        document.getElementById("gameFeedback").textContent =
+          "💗 Good try! The correct answer is " + correct + ". Try another activity!";
+      }
+    };
+
+    area.appendChild(button);
   });
-
-  document.getElementById("home").style.display = "block";
 }
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", startWonderland);
-} else {
-  startWonderland();
+function startNumberGame() {
+  secretNumber = Math.floor(Math.random() * 5) + 1;
+
+  showActivity(
+    "⭐ The Magic Number Game",
+    "Which number am I thinking of?",
+    ["1", "2", "3", "4", "5"],
+    String(secretNumber),
+    "Pick your answer!"
+  );
 }
+
+function startLetters() {
+  showActivity(
+    "🔤 Letter Adventure",
+    "Which letter does APPLE begin with?",
+    ["A", "B", "C"],
+    "A",
+    "Help Pip find the first letter!"
+  );
+}
+
+function startNumbers() {
+  showActivity(
+    "🔢 Number Fun",
+    "How many stars are here? ⭐⭐⭐",
+    ["2", "3", "4"],
+    "3",
+    "Count the stars carefully!"
+  );
+}
+
+function startColours() {
+  showActivity(
+    "🎨 Colour Challenge",
+    "What colour is a banana usually?",
+    ["Blue", "Yellow", "Purple"],
+    "Yellow",
+    "Twinkle needs your help!"
+  );
+}
+
+function resetStars() {
+  stars = 0;
+  updateStars();
+  document.getElementById("gameFeedback").textContent =
+    "Your stars have been reset. Ready for a new challenge? 🌈";
+}
+
+updateStars();
 </script>
-
-<!-- PART 4 WILL GO HERE -->
-```
-<style>
-#map {
-  width: 100%;
-  height: 420px;
-  min-height: 300px;
-  border-radius: 18px;
-  overflow: hidden;
-  background: #e3f7ff;
-  margin: 15px 0;
-}
-
-#placesGrid,
-#petChoices,
-#planets,
-#subjects {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-}
-
-button {
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-button:hover {
-  transform: translateY(-2px);
-}
-
-body[data-theme="ocean"] {
-  background: #e3f7ff;
-}
-
-body[data-theme="sunset"] {
-  background: #fff0e5;
-}
-
-body[data-theme="forest"] {
-  background: #e8f7e8;
-}
-
-body[data-theme="lavender"] {
-  background: #f1eaff;
-}
-
-#myAvatar {
-  font-size: 4rem;
-  text-align: center;
-}
-
-@media (max-width: 600px) {
-  #map {
-    height: 320px;
-  }
-
-  button {
-    max-width: 100%;
-    white-space: normal;
-  }
-}
-</style>
 
 </main>
 </body>
-</html>
+</html>  
