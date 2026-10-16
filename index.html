@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,206 +8,181 @@
 
 <style>
 :root {
-  --purple: #7857d9;
-  --pink: #ff8eb4;
-  --blue: #91d9ff;
-  --yellow: #ffe681;
-  --green: #9ce7b0;
-  --ink: #302b50;
-  --paper: #fffaff;
+  --purple: #7856d8;
+  --pink: #ff8fbd;
+  --blue: #91dfff;
+  --green: #a8e6a1;
+  --ink: #30284b;
 }
 
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
-  background: #fff8fd;
-  color: var(--ink);
   font-family: "Trebuchet MS", Arial, sans-serif;
+  background: #fff8ff;
+  color: var(--ink);
 }
 
-button, select, input { font: inherit; }
+header {
+  text-align: center;
+  padding: 30px 15px;
+  background: linear-gradient(120deg, #e7c8ff, #bdeeff, #ffd4e7);
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+}
+
+header p {
+  margin-bottom: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  box-shadow: 0 2px 10px #30284b15;
+}
+
+button, .nav-link {
+  font: inherit;
+}
 
 button {
   cursor: pointer;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--ink);
+  padding: 10px 13px;
+  border-radius: 18px;
+  background: #f0e6ff;
+  font-weight: bold;
+}
+
+nav a:hover {
+  background: #dfceff;
+}
+
+main {
+  width: min(1100px, 94%);
+  margin: auto;
+}
+
+section {
+  margin: 25px 0;
+  padding: 24px;
+  background: white;
+  border-radius: 22px;
+  box-shadow: 0 5px 20px #30284b0c;
+}
+
+h2 {
+  color: var(--purple);
+}
+
+button, .action {
   border: 0;
-  border-radius: 14px;
-  padding: 12px 17px;
+  border-radius: 13px;
+  padding: 11px 15px;
   background: var(--purple);
   color: white;
   font-weight: bold;
 }
 
-button:hover { filter: brightness(1.07); }
+button:hover, .action:hover {
+  filter: brightness(1.08);
+}
 
 button:focus-visible, a:focus-visible, select:focus-visible {
-  outline: 3px solid #ff9b36;
+  outline: 3px solid #ff9a3d;
   outline-offset: 3px;
 }
 
-a { color: inherit; }
-
-header {
-  padding: 16px 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  background: white;
-  border-bottom: 3px solid #f0e6ff;
+.secondary {
+  background: #e9ddff;
+  color: var(--ink);
 }
 
-.logo {
-  color: var(--purple);
-  font-size: 1.5rem;
-  font-weight: 900;
-}
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-nav a {
-  text-decoration: none;
-  font-weight: bold;
-  padding: 9px 12px;
+.status {
+  padding: 12px;
   border-radius: 12px;
+  background: #f3eaff;
+  min-height: 45px;
 }
 
-nav a:hover { background: #f1eaff; }
-
-.hero {
-  padding: 55px 6%;
-  background: linear-gradient(130deg, #e8e0ff, #ffe4f0, #e1f9ff);
+.card-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 30px;
-  align-items: center;
-}
-
-.hero h1 {
-  font-size: clamp(2.5rem, 6vw, 4.7rem);
-  line-height: 1.05;
-  margin: 12px 0;
-}
-
-.hero p { font-size: 1.1rem; line-height: 1.7; }
-
-.hero-art {
-  text-align: center;
-  font-size: clamp(5rem, 13vw, 9rem);
-  padding: 25px;
-  border-radius: 35px;
-  background: #ffffffa8;
-}
-
-.tag {
-  display: inline-block;
-  background: white;
-  color: var(--purple);
-  border-radius: 20px;
-  padding: 8px 13px;
-  font-weight: bold;
-}
-
-.section {
-  padding: 42px 5%;
-  scroll-margin-top: 15px;
-}
-
-.section h2 { font-size: 2rem; margin-top: 0; }
-
-.subtitle { color: #69617f; line-height: 1.6; }
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 12px;
 }
 
 .card {
-  background: white;
-  border: 2px solid #eee5ff;
-  border-radius: 23px;
-  padding: 22px;
-  box-shadow: 0 6px 18px #4c2a7510;
-  min-width: 0;
-}
-
-.card h3 { margin-top: 8px; }
-
-.emoji { font-size: 2.7rem; }
-
-.pink { background: #fff0f6; }
-.blue { background: #ecf9ff; }
-.yellow { background: #fff9dc; }
-.green { background: #edfff0; }
-.purple { background: #f3efff; }
-
-select, input {
-  width: 100%;
-  padding: 12px;
-  border: 2px solid #e2d7f5;
-  border-radius: 12px;
-  background: white;
-  color: var(--ink);
-  margin: 8px 0 14px;
-}
-
-.result {
-  background: #f5f0ff;
-  padding: 14px;
-  border-radius: 14px;
-  margin-top: 12px;
-  line-height: 1.6;
-}
-
-.world-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(220px, 0.8fr);
-  gap: 18px;
-}
-
-.world-panel {
-  background: #eaf8ff;
-  border: 2px solid #c9eaff;
-  border-radius: 24px;
   padding: 16px;
-  min-width: 0;
+  border-radius: 16px;
+  background: #f7efff;
+  text-align: center;
 }
 
-.world {
+.card .emoji {
+  font-size: 2.2rem;
+}
+
+#world {
   display: grid;
-  grid-template-columns: repeat(10, minmax(0, 1fr));
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 3px;
   padding: 8px;
-  background: #d4efff;
   border-radius: 15px;
+  background: #b9e9a7;
+  width: 100%;
 }
 
-.block {
+.tile {
+  min-width: 0;
   aspect-ratio: 1;
   padding: 0;
-  border-radius: 5px;
-  min-width: 0;
-  font-size: clamp(12px, 2.5vw, 25px);
-  display: grid;
-  place-items: center;
-  background: #fff;
-  border: 1px solid #ffffffaa;
-  color: #302b50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ffffff70;
+  border-radius: 4px;
+  font-size: clamp(10px, 2.8vw, 25px);
+  color: #30284b;
+  background: #b9e9a7;
+  overflow: hidden;
 }
 
-.block:hover { outline: 2px solid #7857d9; }
+.tile.grass {
+  background: #b9e9a7;
+}
 
-.block.selected {
-  outline: 3px solid #7857d9;
-  outline-offset: -2px;
+.tile.water {
+  background: #8bd7ff;
+}
+
+.tile.path {
+  background: #f2d4a0;
+}
+
+.tile.building {
+  background: #e4d5ff;
+}
+
+.tile.placed {
+  background: #d8f4c8;
+  border: 2px solid #ffffff;
 }
 
 .tools {
@@ -216,627 +192,537 @@ select, input {
   margin: 12px 0;
 }
 
-.tools button { flex: 1; }
-
-.small { font-size: 0.9rem; line-height: 1.6; }
-
-.game-question {
-  font-size: 1.35rem;
-  font-weight: bold;
-  margin: 15px 0;
+.tools button.selected {
+  outline: 3px solid #ff9fca;
+  outline-offset: 2px;
 }
 
-.answer-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+#buildingTools[hidden] {
+  display: none !important;
 }
 
-.answer-list button {
-  background: #eae3ff;
-  color: var(--ink);
-}
-
-.answer-list button:disabled { opacity: 0.7; }
-
-.video-frame {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 0;
-  border-radius: 16px;
-  background: #eee6ff;
-}
-
-.book-page {
-  min-height: 120px;
-  background: #fff8dc;
-  border-radius: 15px;
-  padding: 18px;
+#bookPage {
+  padding: 16px;
+  border-radius: 14px;
+  background: #fff4d8;
   line-height: 1.8;
 }
 
 footer {
-  padding: 30px 5%;
   text-align: center;
-  background: #eee7ff;
-  line-height: 1.8;
+  padding: 25px;
+  background: #eadcff;
+  margin-top: 35px;
 }
 
-.note {
-  font-size: 0.88rem;
-  color: #6d6380;
-  line-height: 1.6;
+.small {
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
 
-@media (max-width: 700px) {
-  .hero, .world-layout { grid-template-columns: 1fr; }
-  .hero { padding: 35px 5%; }
-  header { align-items: flex-start; }
-  nav a { padding: 7px; }
+@media (max-width: 480px) {
+  section {
+    padding: 16px;
+  }
+
+  #world {
+    gap: 2px;
+    padding: 4px;
+  }
+
+  .tile {
+    border-radius: 2px;
+  }
 }
 </style>
 </head>
 
 <body>
-
 <header>
-  <a class="logo" href="#home" style="text-decoration:none">
-    🌈 Zumar Wonderland
-  </a>
-
-  <nav aria-label="Main navigation">
-    <a href="#classes">Classes</a>
-    <a href="#world">Block World</a>
-    <a href="#games">Games</a>
-    <a href="#videos">Videos</a>
-    <a href="#books">Books</a>
-    <a href="#rewards">Rewards</a>
-  </nav>
+  <h1>🌈 Zumar Wonderland</h1>
+  <p>A magical world to explore, build, learn, and play!</p>
 </header>
 
+<nav aria-label="Main navigation">
+  <a href="#worldSection">🌍 World</a>
+  <a href="#classes">🏫 Classes</a>
+  <a href="#games">🎮 Games</a>
+  <a href="#books">📚 Books</a>
+  <a href="#videos">🎬 Videos</a>
+  <a href="#rewards">⭐ Rewards</a>
+</nav>
+
 <main>
+  <section id="worldSection">
+    <h2>🌍 Your Block World</h2>
+    <p>Explore Wonderland or build your own magical kingdom!</p>
 
-<section class="hero" id="home">
-  <div>
-    <span class="tag">✨ LEARN • PLAY • CREATE</span>
-    <h1>Your world.<br>Your adventure.</h1>
-    <p>
-      Welcome to Zumar Wonderland, a colourful place to learn,
-      play games, build amazing things, and explore new ideas!
-    </p>
-    <a href="#world"><button>🌍 Enter My World</button></a>
-    <a href="#classes"><button style="background:#ff8eb4">🎓 Explore Classes</button></a>
-  </div>
-
-  <div class="hero-art" aria-label="Wonderland characters">
-    🐼 🦄 🦊<br>
-    🏰 🌈 ⭐
-  </div>
-</section>
-
-<section class="section" id="classes">
-  <h2>🎓 Your Learning Academy</h2>
-  <p class="subtitle">
-    From your first school adventures to your final school year!
-  </p>
-
-  <div class="card purple">
-    <label for="grade"><strong>Choose your class:</strong></label>
-    <select id="grade">
-      <option value="KG 1">KG 1</option>
-      <option value="KG 2">KG 2</option>
-      <option value="Grade 1">Grade 1</option>
-      <option value="Grade 2">Grade 2</option>
-      <option value="Grade 3">Grade 3</option>
-      <option value="Grade 4">Grade 4</option>
-      <option value="Grade 5">Grade 5</option>
-      <option value="Grade 6" selected>Grade 6</option>
-      <option value="Grade 7">Grade 7</option>
-      <option value="Grade 8">Grade 8</option>
-      <option value="Grade 9">Grade 9</option>
-      <option value="Grade 10">Grade 10</option>
-      <option value="Grade 11">Grade 11</option>
-      <option value="Grade 12">Grade 12</option>
-    </select>
-    <button id="chooseGrade">Open My Classroom</button>
-    <div class="result" id="gradeResult" aria-live="polite">
-      Welcome to Grade 6! 🎒
-    </div>
-  </div>
-
-  <div class="grid" style="margin-top:18px">
-    <article class="card pink">
-      <div class="emoji">🔤</div>
-      <h3>English & ABC</h3>
-      <p>Letters, spelling, reading, and writing.</p>
-      <a href="#games">Explore activities →</a>
-    </article>
-    <article class="card blue">
-      <div class="emoji">🔢</div>
-      <h3>Maths Lab</h3>
-      <p>Numbers, puzzles, calculations, and challenges.</p>
-      <a href="#games">Play maths →</a>
-    </article>
-    <article class="card green">
-      <div class="emoji">🌙</div>
-      <h3>Arabic & More</h3>
-      <p>Make room for Arabic, science, art, and other subjects.</p>
-      <a href="#books">Explore guidebooks →</a>
-    </article>
-  </div>
-
-  <p class="note">
-    The class levels are ready to explore. Actual lessons and course
-    materials still need to be added for each grade.
-  </p>
-</section>
-
-<section class="section" id="world">
-  <h2>🧱 Wonderland Block World</h2>
-  <p class="subtitle">
-    Inspired by block-building games! Select a block, then tap a square
-    to build your own little world.
-  </p>
-
-  <div class="world-layout">
-    <div class="world-panel">
-      <div class="tools" aria-label="Block tools">
-        <button data-block="🟩" class="block-choice">🌿 Grass</button>
-        <button data-block="🟫" class="block-choice">🟫 Dirt</button>
-        <button data-block="🪨" class="block-choice">🪨 Stone</button>
-        <button data-block="🟦" class="block-choice">💧 Water</button>
-        <button data-block="🪵" class="block-choice">🪵 Wood</button>
-        <button data-block="🧱" class="block-choice">🧱 Brick</button>
-      </div>
-
-      <div id="world" class="world" aria-label="Buildable block grid"></div>
-
-      <div class="tools">
-        <button id="removeBlock" style="background:#e86e90">🧹 Remove block</button>
-        <button id="resetWorld" style="background:#5aaf85">🔄 Reset world</button>
-      </div>
-
-      <p id="worldMessage" class="small" aria-live="polite">
-        Selected block: 🌿 Grass. Tap a square to place it!
-      </p>
+    <div class="tools">
+      <button id="exploreMode" type="button">🔎 Explore Mode</button>
+      <button id="buildMode" type="button">🧱 Build Mode</button>
     </div>
 
-    <aside class="card yellow">
-      <div class="emoji">🏰</div>
-      <h3>Builder's Corner</h3>
-      <p>Try building a house, garden, castle, or school.</p>
-      <ul class="small">
-        <li>Choose a block.</li>
-        <li>Tap any square.</li>
-        <li>Change blocks to decorate.</li>
-        <li>Remove blocks to redesign.</li>
-      </ul>
-      <p><strong>Builder tip:</strong> Use wood for walls and bricks for a castle!</p>
-      <p class="note">
-        This is the first 2D building version. Walking around a 3D world,
-        multiplayer, creatures, and saving shared worlds can be added later.
-      </p>
-    </aside>
-  </div>
-</section>
-
-<section class="section" id="games">
-  <h2>🎮 Games Arcade</h2>
-  <p class="subtitle">Play a quick challenge and earn Wonderland stars!</p>
-
-  <div class="grid">
-    <article class="card pink">
-      <div class="emoji">🔢</div>
-      <h3>Number Challenge</h3>
-      <div id="question" class="game-question">What is 5 + 3?</div>
-      <div id="answers" class="answer-list">
-        <button data-answer="7">7</button>
-        <button data-answer="8">8</button>
-        <button data-answer="9">9</button>
-        <button data-answer="10">10</button>
+    <div id="buildingTools" hidden>
+      <h3>Choose a building tool</h3>
+      <div class="tools" id="toolButtons">
+        <button type="button" data-tool="🏠">🏠 House</button>
+        <button type="button" data-tool="🌳">🌳 Tree</button>
+        <button type="button" data-tool="🏰">🏰 Castle</button>
+        <button type="button" data-tool="🌸">🌸 Flower</button>
+        <button type="button" data-tool="🧱">🧱 Block</button>
+        <button type="button" data-tool="🌿">🌿 Grass</button>
+        <button type="button" data-tool="ERASE" class="secondary">🧹 Erase</button>
       </div>
-      <p id="gameMessage" aria-live="polite">Choose your answer!</p>
-      <button id="nextQuestion">Next Question ➜</button>
-    </article>
-
-    <article class="card blue">
-      <div class="emoji">🧠</div>
-      <h3>Memory Challenge</h3>
-      <p>Remember this pattern, then hide it and try to recall it!</p>
-      <div id="memoryPattern" class="result" style="font-size:1.5rem">
-        🌟 🐼 🍎
-      </div>
-      <button id="hidePattern">Hide Pattern</button>
-      <button id="showPattern" style="background:#4b9cce">Show Again</button>
-      <p id="memoryMessage" aria-live="polite">Look carefully!</p>
-    </article>
-
-    <article class="card green">
-      <div class="emoji">🔤</div>
-      <h3>Word Builder</h3>
-      <p>Which word starts with the letter B?</p>
-      <div class="answer-list">
-        <button data-word="Apple">🍎 Apple</button>
-        <button data-word="Ball">⚽ Ball</button>
-        <button data-word="Cat">🐱 Cat</button>
-        <button data-word="Dog">🐶 Dog</button>
-      </div>
-      <p id="wordMessage" aria-live="polite">Choose a word!</p>
-    </article>
-
-    <article class="card yellow">
-      <div class="emoji">🎨</div>
-      <h3>Colour Discovery</h3>
-      <p>Tap a colour to discover its name.</p>
-      <div class="tools">
-        <button data-colour="Red" style="background:#e65c65">Red</button>
-        <button data-colour="Blue" style="background:#438ddd">Blue</button>
-        <button data-colour="Green" style="background:#299e68">Green</button>
-        <button data-colour="Yellow" style="background:#d9aa16;color:#302b50">Yellow</button>
-      </div>
-      <p id="colourMessage" aria-live="polite">Choose a colour!</p>
-    </article>
-  </div>
-</section>
-
-<section class="section" id="videos">
-  <h2>🎬 Wonderland Video Screen</h2>
-  <p class="subtitle">
-    Watch educational videos here. You can add suitable public YouTube
-    videos or your own videos that you have permission to share.
-  </p>
-
-  <div class="grid">
-    <article class="card purple">
-      <div class="emoji">📺</div>
-      <h3>Watch a Lesson</h3>
-      <label for="videoId">YouTube video ID</label>
-      <input id="videoId" placeholder="Enter a video ID">
-      <button id="loadVideo">Load Video</button>
-      <p class="note">
-        A video ID is the part after v= in a YouTube link.
-        Only use videos suitable for your audience.
-      </p>
-      <p id="videoMessage" aria-live="polite"></p>
-    </article>
-
-    <article class="card">
-      <h3>▶️ Video Player</h3>
-      <iframe
-        id="videoFrame"
-        class="video-frame"
-        title="Educational video player"
-        src="about:blank"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
-      <p class="note">
-        Some videos cannot be embedded because their owners disable
-        playback on other websites.
-      </p>
-    </article>
-  </div>
-</section>
-
-<section class="section" id="books">
-  <h2>📚 Guidebook Library</h2>
-  <p class="subtitle">
-    Start with these sample learning books. We can add complete books,
-    illustrations, worksheets, and videos next.
-  </p>
-
-  <div class="grid">
-    <article class="card pink">
-      <div class="emoji">🔤</div>
-      <h3>ABC Adventure</h3>
-      <p>Explore letters and their sounds.</p>
-      <button data-book="abc">Open Guidebook</button>
-    </article>
-
-    <article class="card blue">
-      <div class="emoji">✂️</div>
-      <h3>Crafts & Creativity</h3>
-      <p>Ideas for drawing, paper crafts, and fun projects.</p>
-      <button data-book="crafts">Open Guidebook</button>
-    </article>
-
-    <article class="card green">
-      <div class="emoji">🌙</div>
-      <h3>Arabic Starter</h3>
-      <p>Begin exploring Arabic letters and words.</p>
-      <button data-book="arabic">Open Guidebook</button>
-    </article>
-  </div>
-
-  <div class="card" style="margin-top:18px">
-    <h3 id="bookTitle">📖 Your Guidebook</h3>
-    <div id="bookPage" class="book-page" aria-live="polite">
-      Choose a guidebook above to begin.
     </div>
-  </div>
-</section>
 
-<section class="section" id="rewards">
-  <h2>⭐ Wonderland Rewards</h2>
+    <div id="world" aria-label="Interactive twelve by twelve building map"></div>
 
-  <div class="grid">
-    <article class="card yellow">
-      <div class="emoji">🪙</div>
-      <h3>Your Virtual Coins</h3>
-      <p style="font-size:2rem;font-weight:bold">
-        <span id="coins">0</span> coins
-      </p>
-      <p class="small">
-        These are practice coins for this browser only. They are not real money.
-      </p>
-      <button id="bonus">Collect Daily Practice Bonus (+5)</button>
-      <p id="bonusMessage" aria-live="polite"></p>
-    </article>
+    <div class="tools">
+      <button type="button" id="saveWorld">💾 Save World</button>
+      <button type="button" id="resetWorld" class="secondary">🔄 Reset World</button>
+    </div>
 
-    <article class="card purple">
-      <div class="emoji">🌟</div>
-      <h3>Your Stars</h3>
-      <p style="font-size:2rem;font-weight:bold">
-        <span id="stars">0</span> stars
-      </p>
-      <p>Correct answers earn stars. Keep practising!</p>
-    </article>
-  </div>
-
-  <p class="note">
-    For now, coins and stars are stored in this browser. They are not
-    accounts, cannot be transferred, and do not have cash value.
-  </p>
-</section>
-
-<section class="section">
-  <div class="card pink">
-    <h2>✉️ Student Accounts — Coming Later</h2>
-    <p>
-      We can add secure Google sign-in and private student progress after
-      the learning features are ready.
+    <p id="worldMessage" class="status" aria-live="polite">
+      Welcome to Wonderland! Select a square to explore it.
     </p>
-    <p class="note">
-      Never type your Gmail password into a homemade form. Real Google
-      sign-in must use Google's official secure sign-in process.
-      Ask your dad to help set it up.
-    </p>
-  </div>
-</section>
+    <p>🧱 Decorations placed: <strong id="placed">0</strong></p>
+    <p class="small">Your world is saved in this browser on this device.</p>
+  </section>
 
+  <section id="classes">
+    <h2>🏫 Learning City</h2>
+    <p>Choose a school level to start exploring learning activities.</p>
+
+    <div class="card-grid">
+      <div class="card"><div class="emoji">🧸</div><h3>KG</h3><p>Letters, shapes, and numbers.</p></div>
+      <div class="card"><div class="emoji">✏️</div><h3>Grades 1–3</h3><p>Reading and basic maths.</p></div>
+      <div class="card"><div class="emoji">📘</div><h3>Grades 4–6</h3><p>Science, English, and maths.</p></div>
+      <div class="card"><div class="emoji">🔬</div><h3>Grades 7–9</h3><p>Explore new ideas.</p></div>
+      <div class="card"><div class="emoji">🎓</div><h3>Grades 10–12</h3><p>Prepare for the future.</p></div>
+    </div>
+  </section>
+
+  <section id="games">
+    <h2>🎮 Game Galaxy</h2>
+    <p>Answer a question and earn a star!</p>
+
+    <div class="card">
+      <h3 id="question">What is 5 + 3?</h3>
+      <div class="tools" style="justify-content:center">
+        <button type="button" class="answer" data-answer="7">7</button>
+        <button type="button" class="answer" data-answer="8">8</button>
+        <button type="button" class="answer" data-answer="9">9</button>
+      </div>
+      <p id="quizMessage" class="status" aria-live="polite">Choose your answer!</p>
+      <button type="button" id="nextQuestion" class="secondary">➡️ Next Question</button>
+    </div>
+  </section>
+
+  <section id="books">
+    <h2>📚 Digital Book Corner</h2>
+    <p>Choose a story to read.</p>
+
+    <div class="tools">
+      <button type="button" data-book="1" class="bookButton">🐰 The Brave Bunny</button>
+      <button type="button" data-book="2" class="bookButton">🌙 The Moon Garden</button>
+      <button type="button" data-book="3" class="bookButton">🏰 The Tiny Castle</button>
+    </div>
+
+    <div id="bookPage">
+      <h3 id="bookTitle">Welcome, reader!</h3>
+      <p id="bookText">Choose a book above to begin your adventure.</p>
+    </div>
+  </section>
+
+  <section id="videos">
+    <h2>🎬 Video Island</h2>
+    <p>Add a video by pasting its YouTube embed link below.</p>
+
+    <label for="videoURL">YouTube video link:</label>
+    <input id="videoURL" type="url" placeholder="https://www.youtube.com/watch?v=..." style="width:100%;padding:12px;margin:10px 0;border:1px solid #ccc;border-radius:10px">
+
+    <button type="button" id="loadVideo">▶️ Load Video</button>
+
+    <p id="videoMessage" class="status" aria-live="polite">Choose an appropriate video to watch.</p>
+    <div id="videoFrame" style="margin-top:12px"></div>
+    <p class="small">This demo embeds public YouTube videos. It does not upload videos to YouTube.</p>
+  </section>
+
+  <section id="rewards">
+    <h2>⭐ Your Rewards</h2>
+    <div class="card-grid">
+      <div class="card"><div class="emoji">🪙</div><h3>Coins</h3><p id="coinCount">0</p></div>
+      <div class="card"><div class="emoji">⭐</div><h3>Stars</h3><p id="starCount">0</p></div>
+    </div>
+
+    <div class="tools">
+      <button type="button" id="bonus">🎁 Collect Daily Practice Bonus</button>
+    </div>
+    <p id="bonusMessage" class="status" aria-live="polite">Complete a quiz to earn stars!</p>
+  </section>
 </main>
 
 <footer>
-  <strong>🌈 Zumar Wonderland</strong><br>
-  Learn something. Build something. Imagine anything!<br>
-  <span class="note">A learning and creativity project.</span>
+  <strong>🌈 Zumar Wonderland</strong>
+  <p>Imagine it. Build it. Learn it. Play it!</p>
 </footer>
 
 <script>
-/* CLASS SELECTOR */
-document.getElementById("chooseGrade").addEventListener("click", function () {
-  const grade = document.getElementById("grade").value;
-  document.getElementById("gradeResult").textContent =
-    "🎉 Welcome to " + grade + "! Your Wonderland classroom is ready to explore.";
-});
+(function () {
+  "use strict";
 
-/* BLOCK WORLD */
-const world = document.getElementById("world");
-const worldMessage = document.getElementById("worldMessage");
-let selectedBlock = "🟩";
-let removeMode = false;
-let blocks = Array(100).fill("");
+  /* BLOCK WORLD */
+  const world = document.getElementById("world");
+  const worldMessage = document.getElementById("worldMessage");
+  const buildingTools = document.getElementById("buildingTools");
+  const placedDisplay = document.getElementById("placed");
 
-function drawWorld() {
-  world.innerHTML = "";
+  const locations = {
+    "1,1": ["🏰", "Wonderland Castle", "Your magical headquarters!"],
+    "1,9": ["🏫", "Learning City", "Explore your learning adventures."],
+    "5,2": ["🌳", "Book Forest", "A magical place for stories."],
+    "5,9": ["🎮", "Game Galaxy", "Play and practise your skills."],
+    "9,2": ["🏡", "Builder's Village", "Build your own kingdom!"],
+    "9,9": ["🎬", "Video Island", "Visit the video library."]
+  };
 
-  blocks.forEach(function (block, index) {
-    const button = document.createElement("button");
-    button.className = "block";
-    button.textContent = block || "·";
-    button.setAttribute("aria-label", "Block square " + (index + 1));
+  let mode = "explore";
+  let selectedTool = "🏠";
+  let tiles = [];
+  let placed = 0;
 
-    button.addEventListener("click", function () {
-      if (removeMode) {
-        blocks[index] = "";
-        worldMessage.textContent = "🧹 Block removed!";
-      } else {
-        blocks[index] = selectedBlock;
-        worldMessage.textContent = "✨ You placed " + selectedBlock + "!";
+  function updatePlaced() {
+    placed = tiles.filter(function (tile) {
+      return Boolean(tile.dataset.placed);
+    }).length;
+
+    placedDisplay.textContent = placed;
+  }
+
+  function setMode(newMode) {
+    mode = newMode;
+    buildingTools.hidden = mode !== "build";
+
+    document.getElementById("exploreMode").textContent =
+      mode === "explore" ? "✅ Explore Mode" : "🔎 Explore Mode";
+
+    document.getElementById("buildMode").textContent =
+      mode === "build" ? "✅ Build Mode" : "🧱 Build Mode";
+
+    worldMessage.textContent = mode === "build"
+      ? "Choose a tool, then tap any square to build!"
+      : "Explore the map by tapping a special location.";
+  }
+
+  function buildMap() {
+    world.innerHTML = "";
+    tiles = [];
+
+    for (let r = 0; r < 12; r++) {
+      for (let c = 0; c < 12; c++) {
+        const tile = document.createElement("button");
+        const key = r + "," + c;
+        const location = locations[key];
+
+        let base = "grass";
+        let icon = "";
+
+        if ((r + c) % 7 === 0 || (r + c) % 11 === 0) {
+          base = "water";
+          icon = "💧";
+        }
+
+        if (r === 6 || c === 6) {
+          base = "path";
+          icon = "";
+        }
+
+        if (location) {
+          base = "building";
+          icon = location[0];
+        }
+
+        tile.type = "button";
+        tile.className = "tile " + base;
+        tile.dataset.row = r;
+        tile.dataset.col = c;
+        tile.dataset.base = base;
+        tile.dataset.originalIcon = icon;
+        tile.dataset.location = key;
+        tile.textContent = icon;
+        tile.setAttribute("aria-label", location ? location[1] : "Map square");
+
+        tile.addEventListener("click", function () {
+          if (mode === "build") {
+            if (selectedTool === "ERASE") {
+              delete tile.dataset.placed;
+              tile.classList.remove("placed");
+              tile.textContent = tile.dataset.originalIcon || "";
+              worldMessage.textContent = "🧹 Square cleared!";
+            } else {
+              tile.dataset.placed = selectedTool;
+              tile.classList.add("placed");
+              tile.textContent = selectedTool;
+              worldMessage.textContent = "✨ You placed " + selectedTool + "!";
+            }
+
+            updatePlaced();
+            return;
+          }
+
+          if (location) {
+            worldMessage.textContent =
+              location[0] + " " + location[1] + " — " + location[2];
+
+            if (key === "1,9") {
+              document.getElementById("classes").scrollIntoView({ behavior: "smooth" });
+            } else if (key === "5,9") {
+              document.getElementById("games").scrollIntoView({ behavior: "smooth" });
+            } else if (key === "5,2") {
+              document.getElementById("books").scrollIntoView({ behavior: "smooth" });
+            } else if (key === "9,2") {
+              setMode("build");
+            } else if (key === "9,9") {
+              document.getElementById("videos").scrollIntoView({ behavior: "smooth" });
+            }
+          } else {
+            worldMessage.textContent = "🌿 A lovely part of Wonderland!";
+          }
+        });
+
+        tiles.push(tile);
+        world.appendChild(tile);
       }
-      drawWorld();
+    }
+
+    updatePlaced();
+  }
+
+  document.getElementById("exploreMode").addEventListener("click", function () {
+    setMode("explore");
+  });
+
+  document.getElementById("buildMode").addEventListener("click", function () {
+    setMode("build");
+  });
+
+  document.querySelectorAll("[data-tool]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      selectedTool = button.dataset.tool;
+
+      document.querySelectorAll("[data-tool]").forEach(function (other) {
+        other.classList.toggle("selected", other === button);
+      });
+
+      worldMessage.textContent = selectedTool === "ERASE"
+        ? "🧹 Tap a square to erase its decoration."
+        : "Selected tool: " + selectedTool + ". Tap a square to place it!";
+    });
+  });
+
+  document.getElementById("saveWorld").addEventListener("click", function () {
+    try {
+      const saved = tiles.map(function (tile) {
+        return tile.dataset.placed || "";
+      });
+
+      localStorage.setItem("zumarWonderlandWorld", JSON.stringify(saved));
+      worldMessage.textContent = "💾 Your world has been saved in this browser!";
+    } catch (error) {
+      worldMessage.textContent = "Sorry! This browser could not save your world.";
+    }
+  });
+
+  document.getElementById("resetWorld").addEventListener("click", function () {
+    if (confirm("Reset all your building decorations?")) {
+      tiles.forEach(function (tile) {
+        delete tile.dataset.placed;
+        tile.classList.remove("placed");
+        tile.textContent = tile.dataset.originalIcon || "";
+      });
+
+      updatePlaced();
+      worldMessage.textContent = "🔄 Your map has been reset.";
+    }
+  });
+
+  function restoreWorld() {
+    try {
+      const saved = JSON.parse(localStorage.getItem("zumarWonderlandWorld") || "null");
+
+      if (!Array.isArray(saved) || saved.length !== tiles.length) return;
+
+      tiles.forEach(function (tile, index) {
+        if (saved[index]) {
+          tile.dataset.placed = saved[index];
+          tile.textContent = saved[index];
+          tile.classList.add("placed");
+        }
+      });
+
+      updatePlaced();
+    } catch (error) {
+      worldMessage.textContent = "Your map is ready! Saving is unavailable in this browser.";
+    }
+  }
+
+  /* QUIZ AND REWARDS */
+  const questions = [
+    { text: "What is 5 + 3?", answers: ["7", "8", "9"], correct: "8" },
+    { text: "What is 10 - 4?", answers: ["5", "6", "7"], correct: "6" },
+    { text: "Which planet do we live on?", answers: ["Mars", "Earth", "Venus"], correct: "Earth" },
+    { text: "How many sides does a triangle have?", answers: ["3", "4", "5"], correct: "3" }
+  ];
+
+  let questionIndex = 0;
+  let answered = false;
+  let coins = 0;
+  let stars = 0;
+
+  function showQuestion() {
+    const question = questions[questionIndex];
+    document.getElementById("question").textContent = question.text;
+    document.querySelectorAll(".answer").forEach(function (button, index) {
+      button.textContent = question.answers[index];
+      button.dataset.answer = question.answers[index];
+      button.disabled = false;
     });
 
-    world.appendChild(button);
-  });
-}
+    document.getElementById("quizMessage").textContent = "Choose your answer!";
+    answered = false;
+  }
 
-document.querySelectorAll(".block-choice").forEach(function (button) {
-  button.addEventListener("click", function () {
-    selectedBlock = button.dataset.block;
-    removeMode = false;
-    worldMessage.textContent = "Selected block: " + selectedBlock + ". Tap a square!";
-  });
-});
+  function updateRewards() {
+    document.getElementById("coinCount").textContent = coins;
+    document.getElementById("starCount").textContent = stars;
+  }
 
-document.getElementById("removeBlock").addEventListener("click", function () {
-  removeMode = true;
-  worldMessage.textContent = "🧹 Removal mode! Tap a square to remove its block.";
-});
-
-document.getElementById("resetWorld").addEventListener("click", function () {
-  blocks = Array(100).fill("");
-  removeMode = false;
-  drawWorld();
-  worldMessage.textContent = "🌱 Your world has been reset. Start building!";
-});
-
-drawWorld();
-
-/* VIRTUAL REWARDS */
-let stars = 0;
-let coins = 0;
-
-function updateRewards() {
-  document.getElementById("stars").textContent = stars;
-  document.getElementById("coins").textContent = coins;
-}
-
-function earnStar() {
-  stars += 1;
-  coins += 2;
-  updateRewards();
-}
-
-/* NUMBER GAME */
-const questions = [
-  { q: "What is 5 + 3?", answers: ["7", "8", "9", "10"], correct: "8" },
-  { q: "What is 10 - 4?", answers: ["5", "6", "7", "8"], correct: "6" },
-  { q: "What is 3 × 4?", answers: ["7", "12", "14", "16"], correct: "12" },
-  { q: "What is 20 ÷ 5?", answers: ["2", "3", "4", "5"], correct: "4" },
-  { q: "What is 9 + 6?", answers: ["13", "14", "15", "16"], correct: "15" }
-];
-
-let questionIndex = 0;
-let answered = false;
-
-function showQuestion() {
-  answered = false;
-  const item = questions[questionIndex];
-  document.getElementById("question").textContent = item.q;
-  document.getElementById("gameMessage").textContent = "Choose your answer!";
-
-  const answerArea = document.getElementById("answers");
-  answerArea.innerHTML = "";
-
-  item.answers.forEach(function (answer) {
-    const button = document.createElement("button");
-    button.textContent = answer;
-    button.dataset.answer = answer;
-
+  document.querySelectorAll(".answer").forEach(function (button) {
     button.addEventListener("click", function () {
       if (answered) return;
       answered = true;
 
-      if (answer === item.correct) {
-        document.getElementById("gameMessage").textContent = "🎉 Correct! You earned a star and 2 coins!";
-        earnStar();
+      const question = questions[questionIndex];
+      const message = document.getElementById("quizMessage");
+
+      if (button.dataset.answer === question.correct) {
+        stars++;
+        coins += 2;
+        message.textContent = "🎉 Correct! You earned a star and 2 coins!";
       } else {
-        document.getElementById("gameMessage").textContent =
-          "Almost! The correct answer is " + item.correct + ". Try the next one!";
+        message.textContent = "😊 Good try! The correct answer is " + question.correct + ".";
       }
 
-      answerArea.querySelectorAll("button").forEach(function (b) {
-        b.disabled = true;
+      document.querySelectorAll(".answer").forEach(function (answerButton) {
+        answerButton.disabled = true;
       });
+
+      updateRewards();
     });
-
-    answerArea.appendChild(button);
   });
-}
 
-document.getElementById("nextQuestion").addEventListener("click", function () {
-  questionIndex = (questionIndex + 1) % questions.length;
-  showQuestion();
-});
+  document.getElementById("nextQuestion").addEventListener("click", function () {
+    questionIndex = (questionIndex + 1) % questions.length;
+    showQuestion();
+  });
 
-/* WORD GAME */
-document.querySelectorAll("[data-word]").forEach(function (button) {
-  button.addEventListener("click", function () {
-    const message = document.getElementById("wordMessage");
+  let bonusCollected = false;
 
-    if (button.dataset.word === "Ball") {
-      message.textContent = "🎉 Correct! Ball starts with B!";
-      earnStar();
-    } else {
-      message.textContent = "Good try! Look for the word that starts with B.";
+  document.getElementById("bonus").addEventListener("click", function () {
+    const message = document.getElementById("bonusMessage");
+
+    if (bonusCollected) {
+      message.textContent = "You've already collected your bonus during this visit!";
+      return;
     }
+
+    coins += 5;
+    bonusCollected = true;
+    updateRewards();
+    message.textContent = "🌟 You collected 5 practice coins!";
   });
-});
 
-/* COLOUR GAME */
-document.querySelectorAll("[data-colour]").forEach(function (button) {
-  button.addEventListener("click", function () {
-    document.getElementById("colourMessage").textContent =
-      "🎨 You chose " + button.dataset.colour + "!";
+  /* STORYBOOKS */
+  const books = {
+    "1": {
+      title: "🐰 The Brave Bunny",
+      text: "Once upon a time, a little bunny found a tiny bird that needed help. The bunny called its friends, and together they helped the bird return home. The bunny learned that courage can be small, but kindness can be enormous. The End! 🌷"
+    },
+    "2": {
+      title: "🌙 The Moon Garden",
+      text: "One quiet evening, Sara discovered a garden that glowed beneath the moonlight. The flowers sparkled like stars, and silver butterflies danced in the air. She visited every night to care for the flowers and share the garden's beauty. The End! ✨"
+    },
+    "3": {
+      title: "🏰 The Tiny Castle",
+      text: "A tiny castle stood on a green hill. Its little doors were always open to travellers who needed a place to rest. Soon, the castle became famous not for its size, but for the kindness of everyone inside. The End! 💜"
+    }
+  };
+
+  document.querySelectorAll(".bookButton").forEach(function (button) {
+    button.addEventListener("click", function () {
+      const book = books[button.dataset.book];
+      document.getElementById("bookTitle").textContent = book.title;
+      document.getElementById("bookText").textContent = book.text;
+    });
   });
-});
 
-/* MEMORY GAME */
-const memoryPattern = document.getElementById("memoryPattern");
+  /* YOUTUBE VIDEO EMBED */
+  document.getElementById("loadVideo").addEventListener("click", function () {
+    const input = document.getElementById("videoURL").value.trim();
+    const message = document.getElementById("videoMessage");
+    const frameContainer = document.getElementById("videoFrame");
 
-document.getElementById("hidePattern").addEventListener("click", function () {
-  memoryPattern.textContent = "❔ ❔ ❔";
-  document.getElementById("memoryMessage").textContent =
-    "What were the three pictures? Click Show Again to check.";
-});
+    let videoId = "";
 
-document.getElementById("showPattern").addEventListener("click", function () {
-  memoryPattern.textContent = "🌟 🐼 🍎";
-  document.getElementById("memoryMessage").textContent =
-    "Remember: star, panda, apple!";
-});
+    try {
+      const url = new URL(input);
 
-/* VIDEO PLAYER */
-document.getElementById("loadVideo").addEventListener("click", function () {
-  const input = document.getElementById("videoId").value.trim();
-  const message = document.getElementById("videoMessage");
+      if (url.hostname === "youtu.be") {
+        videoId = url.pathname.slice(1).split("/")[0];
+      } else if (
+        url.hostname === "youtube.com" ||
+        url.hostname === "www.youtube.com" ||
+        url.hostname === "m.youtube.com"
+      ) {
+        if (url.pathname === "/watch") {
+          videoId = url.searchParams.get("v") || "";
+        } else if (url.pathname.startsWith("/embed/")) {
+          videoId = url.pathname.split("/")[2] || "";
+        }
+      }
+    } catch (error) {
+      videoId = "";
+    }
 
-  if (!/^[a-zA-Z0-9_-]{11}$/.test(input)) {
-    message.textContent = "Please enter a valid 11-character YouTube video ID.";
-    return;
-  }
+    if (!/^[a-zA-Z0-9_-]{11}$/.test(videoId)) {
+      message.textContent = "Please paste a valid YouTube video link.";
+      frameContainer.innerHTML = "";
+      return;
+    }
 
-  document.getElementById("videoFrame").src =
-    "https://www.youtube-nocookie.com/embed/" + input;
-  message.textContent = "Video loaded! If it does not play, its owner may have disabled embedding.";
-});
+    frameContainer.innerHTML = "";
 
-/* GUIDEBOOKS */
-const books = {
-  abc: {
-    title: "🔤 ABC Adventure",
-    text: "A is for Apple 🍎<br>B is for Ball ⚽<br>C is for Cat 🐱<br><br>Practice saying each letter and its sound!"
-  },
-  crafts: {
-    title: "✂️ Crafts & Creativity",
-    text: "Project: Make a paper garden 🌷<br><br>1. Draw flowers on paper.<br>2. Colour the flowers.<br>3. Add leaves and stems.<br>4. Ask an adult to help with scissors."
-  },
-  arabic: {
-    title: "🌙 Arabic Starter",
-    text: "ا — Alif<br>ب — Baa<br>ت — Taa<br><br>Practise writing each letter carefully. Ask a teacher to help you with pronunciation."
-  }
-};
+    const frame = document.createElement("iframe");
+    frame.src = "https://www.youtube-nocookie.com/embed/" + videoId;
+    frame.title = "YouTube video";
+    frame.width = "100%";
+    frame.height = "315";
+    frame.style.border = "0";
+    frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    frame.allowFullscreen = true;
 
-document.querySelectorAll("[data-book]").forEach(function (button) {
-  button.addEventListener("click", function () {
-    const book = books[button.dataset.book];
-    document.getElementById("bookTitle").textContent = book.title;
-    document.getElementById("bookPage").innerHTML = book.text;
+    frameContainer.appendChild(frame);
+    message.textContent = "Your video is ready. Enjoy watching!";
   });
-});
 
-/* VIRTUAL COIN BONUS */
-let bonusCollected = false;
-
-document.getElementById("bonus").addEventListener("click", function () {
-  const message = document.getElementById("bonusMessage");
-
-  if (bonusCollected) {
-    message.textContent = "You have already collected your bonus in this visit!";
-    return;
-  }
-
-  coins += 5;
-  bonusCollected = true;
+  /* START EVERYTHING */
+  buildMap();
+  restoreWorld();
+  showQuestion();
   updateRewards();
-  message.textContent = "🌟 You collected 5 practice coins!";
-});
-  
-buildMap();
-showQuestion();
-updateRewards();
+})();
 </script>
 
 </body>
 </html>
+```
