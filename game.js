@@ -5,6 +5,7 @@
 
 import * as THREE from "three";
 import "./countries.js";
+import "./pets.js";
 
 // ==========================================
 // 1. GAME SETTINGS
