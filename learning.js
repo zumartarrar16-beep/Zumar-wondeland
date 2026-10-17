@@ -116,7 +116,7 @@ function startLearningQuiz(subject) {
 
 function renderLearningQuestion() {
   const questionBox = getLearningElement("quiz-question");
-  const answersBox = getLearningElement("quiz-answers");
+const answersBox = getLearningElement("quiz-options");
 
   if (!questionBox || !answersBox) {
     showLearningMessage(
@@ -230,4 +230,20 @@ function finishLearningQuiz() {
 
 // Make the quiz function available to game.js.
 window.startLearningQuiz = startLearningQuiz;
+// Connect the Learning Garden subject buttons.
+document.querySelectorAll(".subject-button").forEach((button) => {
+  button.addEventListener("click", () => {
+    const quizArea = document.getElementById("quiz-area");
+
+    if (quizArea) {
+      quizArea.classList.remove("hidden");
+      quizArea.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+
+    startLearningQuiz(button.dataset.subject);
+  });
+});
 ```
