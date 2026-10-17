@@ -1,1 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Zumar Wonderland 🌎</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"
+        }
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- LOADING SCREEN -->
+    <div id="loading-screen">
+        <h1>🌎 ZUMAR WONDERLAND</h1>
+        <p>Your adventure is about to begin!</p>
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+    </div>
+
+    <!-- MAIN MENU -->
+    <header class="top-bar">
+        <div class="logo">🌎 ZUMAR <span>WONDERLAND</span></div>
+
+        <button id="home-button" class="small-button">🏠 Home</button>
+    </header>
+
+    <main id="main-menu" class="screen">
+
+        <section class="hero">
+            <p class="eyebrow">✨ YOUR NEXT GREAT ADVENTURE</p>
+
+            <h1>Welcome to<br>
+                <span class="gradient-text">Zumar Wonderland!</span>
+            </h1>
+
+            <p class="hero-description">
+                Explore amazing worlds, discover new countries,
+                meet adorable pets, and learn while you play.
+            </p>
+
+            <button id="play-button" class="primary-button">
+                🚀 ENTER THE WORLD
+            </button>
+
+            <p class="small-note">
+                Your adventure. Your world. Your imagination.
+            </p>
+        </section>
+
+        <section class="feature-grid">
+
+            <button class="feature-card" data-screen="world-screen">
+                <span class="feature-icon">🌍</span>
+                <h2>World Explorer</h2>
+                <p>Discover countries and amazing destinations.</p>
+                <span class="card-link">Explore →</span>
+            </button>
+
+            <button class="feature-card" data-screen="pets-screen">
+                <span class="feature-icon">🐰</span>
+                <h2>My Virtual Pets</h2>
+                <p>Choose a companion for your adventures.</p>
+                <span class="card-link">Meet your pets →</span>
+            </button>
+
+            <button class="feature-card" data-screen="learning-screen">
+                <span class="feature-icon">📚</span>
+                <h2>Learning Garden</h2>
+                <p>Discover subjects, quizzes, and challenges.</p>
+                <span class="card-link">Start learning →</span>
+            </button>
+
+            <button class="feature-card" data-screen="character-screen">
+                <span class="feature-icon">🧑</span>
+                <h2>My Character</h2>
+                <p>Choose your explorer's name and style.</p>
+                <span class="card-link">Create character →</span>
+            </button>
+
+        </section>
+
+        <footer>
+            <p>🌟 Zumar Wonderland — A world of endless possibilities.</p>
+        </footer>
+
+    </main>
+
+    <!-- GAME WORLD -->
+    <section id="game-screen" class="screen hidden">
+
+        <div class="game-heading">
+            <div>
+                <h1>🏙️ Wonder City</h1>
+                <p>Explore your futuristic world!</p>
+            </div>
+
+            <button class="secondary-button" data-screen="main-menu">
+                ← Main Menu
+            </button>
+        </div>
+
+        <div id="game-container">
+
+            <div id="game-message">
+                🌌 Preparing your world...
+            </div>
+
+            <div class="game-hud">
+                <div class="hud-pill">🌎 Wonder City</div>
+                <div class="hud-pill">⭐ Explorer</div>
+            </div>
+
+            <div class="movement-hint">
+                ⬆️ Forward &nbsp; ⬇️ Backward<br>
+                ⬅️ Left &nbsp; ➡️ Right<br>
+                SPACEBAR — Jump
+            </div>
+
+            <div class="game-actions">
+                <button id="camera-button" class="small-button">
+                    🎥 Change View
+                </button>
+
+                <button id="destination-button" class="small-button">
+                    🌀 Destinations
+                </button>
+            </div>
+
+        </div>
+
+        <div id="destinations-panel" class="panel hidden">
+            <h2>🌀 Choose Your Destination</h2>
+
+            <div id="destination-list" class="destination-grid">
+                <!-- Destinations will be added by JavaScript. -->
+            </div>
+
+            <button id="close-destinations" class="secondary-button">
+                Close
+            </button>
+        </div>
+
+    </section>
+
+    <!-- WORLD EXPLORER -->
+    <section id="world-screen" class="screen hidden">
+
+        <button class="secondary-button" data-screen="main-menu">
+            ← Back
+        </button>
+
+        <h1>🌍 World Explorer</h1>
+
+        <p>
+            Choose a country to discover. We'll gradually add
+            unique destinations and explorable environments.
+        </p>
+
+        <input
+            id="country-search"
+            type="search"
+            placeholder="🔎 Search for a country..."
+            aria-label="Search countries"
+        >
+
+        <div id="country-list" class="country-grid">
+            <!-- The country list will be added by countries.js. -->
+        </div>
+
+    </section>
+
+    <!-- VIRTUAL PETS -->
+    <section id="pets-screen" class="screen hidden">
+
+        <button class="secondary-button" data-screen="main-menu">
+            ← Back
+        </button>
+
+        <h1>🐾 My Virtual Pets</h1>
+
+        <p>Choose a lovely companion for your journey!</p>
+
+        <div id="pet-list" class="feature-grid">
+            <!-- Pets will be added by pets.js. -->
+        </div>
+
+        <div id="pet-details" class="panel">
+            <h2>🐰 Your Pet</h2>
+            <p id="selected-pet">
+                Choose a pet to meet your new friend!
+            </p>
+
+            <button id="feed-pet" class="primary-button">
+                🥕 Feed Pet
+            </button>
+
+            <button id="play-pet" class="secondary-button">
+                🧸 Play Together
+            </button>
+
+            <p id="pet-message" aria-live="polite"></p>
+        </div>
+
+    </section>
+
+    <!-- LEARNING GARDEN -->
+    <section id="learning-screen" class="screen hidden">
+
+        <button class="secondary-button" data-screen="main-menu">
+            ← Back
+        </button>
+
+        <h1>📚 The Learning Garden</h1>
+
+        <p>Learn new things and challenge yourself!</p>
+
+        <div class="feature-grid">
+
+            <button class="feature-card subject-button" data-subject="English">
+                <span class="feature-icon">📖</span>
+                <h2>English</h2>
+                <p>Words, reading, and language.</p>
+            </button>
+
+            <button class="feature-card subject-button" data-subject="Math">
+                <span class="feature-icon">🔢</span>
+                <h2>Mathematics</h2>
+                <p>Numbers, puzzles, and problems.</p>
+            </button>
+
+            <button class="feature-card subject-button" data-subject="Science">
+                <span class="feature-icon">🔬</span>
+                <h2>Science</h2>
+                <p>Discover how our world works.</p>
+            </button>
+
+            <button class="feature-card subject-button" data-subject="Geography">
+                <span class="feature-icon">🗺️</span>
+                <h2>Geography</h2>
+                <p>Explore our planet.</p>
+            </button>
+
+        </div>
+
+        <div id="quiz-area" class="panel hidden">
+            <h2 id="quiz-title">🎯 Quiz Challenge</h2>
+            <p id="quiz-question"></p>
+            <div id="quiz-options" class="quiz-options"></div>
+            <p id="quiz-feedback" aria-live="polite"></p>
+            <p id="quiz-score">⭐ Score: 0</p>
+
+            <button id="next-question" class="primary-button hidden">
+                Next Question →
+            </button>
+        </div>
+
+    </section>
+
+    <!-- CHARACTER CREATOR -->
+    <section id="character-screen" class="screen hidden">
+
+        <button class="secondary-button" data-screen="main-menu">
+            ← Back
+        </button>
+
+        <h1>🧑 My Character</h1>
+
+        <p>Create your own explorer!</p>
+
+        <div class="panel character-panel">
+
+            <div id="character-preview">🧑‍🚀</div>
+
+            <label for="character-name">Explorer name:</label>
+
+            <input
+                id="character-name"
+                type="text"
+                maxlength="20"
+                placeholder="Enter your explorer name"
+            >
+
+            <label for="suit-colour">Choose your suit colour:</label>
+
+            <input
+                id="suit-colour"
+                type="color"
+                value="#8b5cf6"
+            >
+
+            <button id="save-character" class="primary-button">
+                💾 Save Character
+            </button>
+
+            <p id="character-message" aria-live="polite"></p>
+
+        </div>
+
+    </section>
+
+    <!-- SHARED MESSAGE AREA -->
+    <div id="notification" class="notification hidden" aria-live="polite"></div>
+
+    <!-- CONNECTED GAME FILES -->
+    <script type="module" src="game.js"></script>
+
+</body>
+</html>
